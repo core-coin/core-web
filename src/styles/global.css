@@ -1,0 +1,11 @@
+@import "./fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #000000;
+  font-family: "Satoshi", "Satoshi Placeholder", sans-serif;
+  color: #FFFFFF;
+}
