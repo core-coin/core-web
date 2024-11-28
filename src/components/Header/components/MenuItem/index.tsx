@@ -3,7 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import clsx from "clsx";
 import { MegaMenu } from "@src/components/Header/components";
 import { Portal } from "@src/components";
-import { type MouseEvent, useState } from "react";
+import { type MouseEvent, useMemo, useRef, useState } from "react";
 import styles from "./styles.module.scss";
 
 interface IMenuItemProps {
@@ -15,6 +15,8 @@ export const MenuItem = ({ title }: IMenuItemProps) => {
     y: number;
     x: number;
   } | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMegaMenuHovered = useRef<boolean>(false);
 
   const handleMouseEnter = (event: MouseEvent<HTMLLIElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -22,10 +24,25 @@ export const MenuItem = ({ title }: IMenuItemProps) => {
       y: rect.bottom,
       x: rect.left + rect.width / 2,
     });
+    setIsMenuOpen(true);
   };
 
   const handleMouseLeave = () => {
-    setMenuPosition(null);
+    setTimeout(() => {
+      if (!isMegaMenuHovered.current) {
+        setIsMenuOpen(false);
+      }
+    }, 100);
+  };
+
+  const handleMouseEnterMenu = () => {
+    setIsMenuOpen(true);
+    isMegaMenuHovered.current = true;
+  };
+
+  const handleMouseLeaveMenu = () => {
+    setIsMenuOpen(false);
+    isMegaMenuHovered.current = false;
   };
 
   return (
@@ -33,7 +50,7 @@ export const MenuItem = ({ title }: IMenuItemProps) => {
       <li
         className={clsx(
           styles["menu-item"],
-          "group inline-flex cursor-pointer items-center gap-1 px-8 py-4 text-sm font-medium",
+          "group relative inline-flex cursor-pointer items-center gap-1 px-8 py-4 text-sm font-medium",
         )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -66,7 +83,13 @@ export const MenuItem = ({ title }: IMenuItemProps) => {
 
       <Portal>
         <AnimatePresence>
-          {menuPosition && <MegaMenu position={menuPosition} />}
+          {isMenuOpen && menuPosition && (
+            <MegaMenu
+              position={menuPosition}
+              onEnter={handleMouseEnterMenu}
+              onExit={handleMouseLeaveMenu}
+            />
+          )}
         </AnimatePresence>
       </Portal>
     </>

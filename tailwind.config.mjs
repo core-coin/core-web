@@ -12,6 +12,7 @@ export default {
     extend: {
       colors: {
         brand: "#00FF6F",
+        "brand-100": "#A8E87B",
         "gray-888": "#888888",
       },
       transitionTimingFunction: {

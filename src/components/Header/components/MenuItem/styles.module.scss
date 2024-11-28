@@ -1,6 +1,17 @@
 .menu-item {
   $menuTextHeight: 14px;
 
+  &:hover {
+    &::after {
+      @apply w-full;
+    }
+  }
+
+  &::after {
+    content: "";
+    @apply absolute bottom-0 h-[1px] w-0 bg-brand-100 left-1/2 -translate-x-1/2 transition-all ease-cubic-menu duration-400;
+  }
+
   .menu-mask {
     height: $menuTextHeight;
 

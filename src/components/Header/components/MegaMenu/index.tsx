@@ -4,9 +4,11 @@ import styles from "./styles.module.scss";
 
 interface IMegaMenuProps {
   position: { x: number; y: number };
+  onEnter?: () => void;
+  onExit?: () => void;
 }
 
-export const MegaMenu = ({ position }: IMegaMenuProps) => {
+export const MegaMenu = ({ position, onEnter, onExit }: IMegaMenuProps) => {
   return (
     <motion.div
       exit={{ opacity: 0, translateX: "-50%", translateY: "24px" }}
@@ -20,6 +22,8 @@ export const MegaMenu = ({ position }: IMegaMenuProps) => {
         top: position.y,
         left: position.x,
       }}
+      onMouseEnter={onEnter}
+      onMouseLeave={onExit}
     >
       <div
         className={clsx(
