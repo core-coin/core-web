@@ -1,0 +1,15 @@
+.btn {
+  @apply border-[1px] border-brand transition-all ease-cubic-menu duration-300 text-black;
+
+  &:hover {
+    @apply border-[1px] border-white/20 text-white;
+    &::after {
+      @apply bg-white top-full;
+    }
+  }
+
+  &::after {
+    content: "";
+    @apply absolute bg-brand transition-all ease-cubic-menu duration-300 -z-10 left-0 w-full h-full top-0;
+  }
+}

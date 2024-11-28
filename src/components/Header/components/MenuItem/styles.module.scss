@@ -1,0 +1,29 @@
+.menu-item {
+  $menuTextHeight: 14px;
+
+  .menu-mask {
+    height: $menuTextHeight;
+
+    .menu-text {
+      &.menu-text-normal {
+        transform: translateY(0);
+      }
+
+      &.menu-text-hover {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &:hover .menu-mask {
+    .menu-text {
+      &.menu-text-normal {
+        transform: translateY(-100%);
+      }
+
+      &.menu-text-hover {
+        transform: translateY(-$menuTextHeight);
+      }
+    }
+  }
+}
