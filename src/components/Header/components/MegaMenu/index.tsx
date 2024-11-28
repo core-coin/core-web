@@ -1,5 +1,6 @@
-import styles from "./styles.module.scss";
+import { motion } from "framer-motion";
 import clsx from "clsx";
+import styles from "./styles.module.scss";
 
 interface IMegaMenuProps {
   position: { x: number; y: number };
@@ -7,7 +8,10 @@ interface IMegaMenuProps {
 
 export const MegaMenu = ({ position }: IMegaMenuProps) => {
   return (
-    <div
+    <motion.div
+      exit={{ opacity: 0, translateX: "-50%", translateY: "24px" }}
+      initial={{ opacity: 0, translateX: "-50%", translateY: "24px" }}
+      animate={{ opacity: 1, translateX: "-50%", translateY: "16px" }}
       className={clsx(
         styles["mega-menu"],
         "fixed z-20 -translate-x-1/2 rounded-xl border border-white/10 bg-black/75 shadow-black/5 backdrop-blur-xl",
@@ -31,6 +35,6 @@ export const MegaMenu = ({ position }: IMegaMenuProps) => {
         </div>
         <div className="w-full">menu items</div>
       </div>
-    </div>
+    </motion.div>
   );
 };

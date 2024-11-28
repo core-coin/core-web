@@ -1,9 +1,10 @@
 import { CaretDown } from "@phosphor-icons/react";
-import styles from "./styles.module.scss";
+import { AnimatePresence } from "framer-motion";
 import clsx from "clsx";
 import { MegaMenu } from "@src/components/Header/components";
 import { Portal } from "@src/components";
 import { type MouseEvent, useState } from "react";
+import styles from "./styles.module.scss";
 
 interface IMenuItemProps {
   title: string;
@@ -63,7 +64,11 @@ export const MenuItem = ({ title }: IMenuItemProps) => {
         />
       </li>
 
-      <Portal>{menuPosition && <MegaMenu position={menuPosition} />}</Portal>
+      <Portal>
+        <AnimatePresence>
+          {menuPosition && <MegaMenu position={menuPosition} />}
+        </AnimatePresence>
+      </Portal>
     </>
   );
 };
