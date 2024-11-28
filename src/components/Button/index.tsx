@@ -22,7 +22,7 @@ type ButtonProps = CommonButtonProps & (ButtonAsAnchor | ButtonAsButton);
 export const Button = ({ children, className, as, ...rest }: ButtonProps) => {
   const commonClasses = clsx(
     styles.btn,
-    "relative overflow-hidden rounded px-12 py-3 text-xs font-bold leading-loose",
+    "h-12 relative overflow-hidden rounded px-12 py-3 text-xs font-bold leading-loose",
     className,
   );
 

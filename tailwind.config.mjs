@@ -2,6 +2,13 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    fontWeight: {
+      thin: 100,
+      regular: 300,
+      medium: 500,
+      bold: 700,
+      black: 900,
+    },
     extend: {
       colors: {
         brand: "#00FF6F",
