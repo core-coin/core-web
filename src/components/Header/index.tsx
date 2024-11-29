@@ -30,7 +30,7 @@ export function Header() {
                   {
                     type: "primary",
                     icon: "/images/ecosystem.png",
-                    backgroundImage: "/images/depin.avif",
+                    backgroundImage: "/images/ecosystem-bg.png",
                     title: "Ecosystem",
                     description:
                       "Interconnected network driving project growth",
@@ -72,7 +72,7 @@ export function Header() {
                   {
                     type: "primary",
                     icon: "/images/get-started.png",
-                    backgroundImage: "/images/depin.avif",
+                    backgroundImage: "/images/get-started-bg.png",
                     title: "Get Started",
                     description:
                       "Interconnected network driving project growth",
@@ -121,7 +121,7 @@ export function Header() {
                   {
                     type: "primary",
                     icon: "/images/get-core-coin.png",
-                    backgroundImage: "/images/depin.avif",
+                    backgroundImage: "/images/get-core-coin-bg.png",
                     title: "Get Core Coin",
                     description:
                       "Learn how you can obtain Core Blockchain's native currency -- XCB",

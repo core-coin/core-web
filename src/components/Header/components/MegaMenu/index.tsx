@@ -74,7 +74,7 @@ export const MegaMenu = ({
           <div className="group relative min-h-[300px] w-[300px] shrink-0 overflow-hidden rounded-lg border border-white/0 bg-[linear-gradient(90deg,_rgba(255,255,255,0.10)_0%,_rgba(255,255,255,0.05)_100%)] transition-all duration-400 ease-cubic-menu hover:border-white/15 hover:bg-[linear-gradient(0deg,_rgba(255,255,255,0.15)_0%,_rgba(255,255,255,0.07)_100%)]">
             <a href={primaryMenuItem.link}>
               <img
-                className="transition-transform duration-400 ease-cubic-menu group-hover:-translate-y-1.5 group-hover:translate-x-1.5"
+                className="transition-transform duration-400 ease-cubic-menu group-hover:-translate-y-1 group-hover:translate-x-1"
                 src={primaryMenuItem.backgroundImage}
                 alt=" "
               />
