@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 import styles from "./styles.module.scss";
 import { type IMegaMenuItemProps, MegaMenuItem } from "./MegaMenuItem";
 
@@ -14,12 +15,16 @@ type PrimaryMenuItem = {
 
 type MegaMenuItems = PrimaryMenuItem | SecondaryMenuItem;
 
-interface IMegaMenuProps {
+export interface IMegaMenu {
+  title: string;
+  menuItems: MegaMenuItems[];
+  wrapperClassname?: string;
+}
+
+interface IMegaMenuProps extends IMegaMenu {
   position: { x: number; y: number };
   onEnter?: () => void;
   onExit?: () => void;
-  title: string;
-  menuItems: MegaMenuItems[];
 }
 
 export const MegaMenu = ({
@@ -28,6 +33,7 @@ export const MegaMenu = ({
   onExit,
   title,
   menuItems,
+  wrapperClassname,
 }: IMegaMenuProps) => {
   const primaryMenuItem = menuItems.find(
     (menuItem) => menuItem.type === "primary",
@@ -43,7 +49,10 @@ export const MegaMenu = ({
       animate={{ opacity: 1, translateX: "-50%", translateY: "16px" }}
       className={clsx(
         styles["mega-menu"],
-        "fixed z-20 -translate-x-1/2 rounded-xl border border-white/10 bg-black/75 shadow-black/5 backdrop-blur-xl",
+        twMerge(
+          "w-[680px] fixed z-20 -translate-x-1/2 rounded-xl border border-white/10 bg-black/75 shadow-black/5 backdrop-blur-xl",
+          wrapperClassname,
+        ),
       )}
       style={{
         top: position.y,

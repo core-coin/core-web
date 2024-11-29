@@ -1,16 +1,17 @@
 import { CaretDown } from "@phosphor-icons/react";
 import { AnimatePresence } from "framer-motion";
 import clsx from "clsx";
-import { MegaMenu } from "@src/components/Header/components";
+import { type IMegaMenu, MegaMenu } from "@src/components/Header/components";
 import { Portal } from "@src/components";
 import { type MouseEvent, useRef, useState } from "react";
 import styles from "./styles.module.scss";
 
 interface IMenuItemProps {
   title: string;
+  megaMenu: IMegaMenu;
 }
 
-export const MenuItem = ({ title }: IMenuItemProps) => {
+export const MenuItem = ({ title, megaMenu }: IMenuItemProps) => {
   const [menuPosition, setMenuPosition] = useState<{
     y: number;
     x: number;
@@ -88,41 +89,9 @@ export const MenuItem = ({ title }: IMenuItemProps) => {
               position={menuPosition}
               onEnter={handleMouseEnterMenu}
               onExit={handleMouseLeaveMenu}
-              title="Discover core blockchain"
-              menuItems={[
-                {
-                  type: "primary",
-                  icon: "/images/depin.png",
-                  backgroundImage: "/images/depin.avif",
-                  title: "Ecosystem",
-                  description: "Interconnected network driving project growth",
-                  link: "",
-                },
-                {
-                  type: "secondary",
-                  icon: "/images/depin.png",
-                  title: "DePIN & RWA Solutions",
-                  description:
-                    "Integrate real-world assets into Core's blockchain ecosystem.",
-                  link: "",
-                },
-                {
-                  type: "secondary",
-                  icon: "/images/depin.png",
-                  title: "DePIN & RWA Solutions",
-                  description:
-                    "Integrate real-world assets into Core's blockchain ecosystem.",
-                  link: "",
-                },
-                {
-                  type: "secondary",
-                  icon: "/images/depin.png",
-                  title: "DePIN & RWA Solutions",
-                  description:
-                    "Integrate real-world assets into Core's blockchain ecosystem.",
-                  link: "",
-                },
-              ]}
+              title={megaMenu.title}
+              menuItems={megaMenu.menuItems}
+              wrapperClassname={megaMenu.wrapperClassname}
             />
           )}
         </AnimatePresence>
