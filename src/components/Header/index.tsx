@@ -1,9 +1,15 @@
+import { motion } from "framer-motion";
 import { MenuItem } from "./components";
 import { Button } from "..";
 
 export function Header() {
   return (
-    <header className="flex justify-center bg-black/75 backdrop-blur-lg">
+    <motion.header
+      className="flex justify-center bg-black/75 backdrop-blur-lg"
+      initial={{ opacity: 0, translateY: -20, scale: 1.1 }}
+      animate={{ opacity: 1, translateY: 0, scale: 1 }}
+      transition={{ type: "spring", stiffness: 30 }}
+    >
       <div className="relative flex h-24 w-full max-w-[1400px] flex-row flex-nowrap items-center gap-2.5 border-b border-white/15 px-6">
         <div className="w-[260px]">
           <a href="/">
@@ -148,6 +154,6 @@ export function Header() {
           </Button>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }
