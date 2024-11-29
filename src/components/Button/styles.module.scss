@@ -1,15 +1,58 @@
 .btn {
-  @apply border-[1px] border-brand transition-all ease-cubic-menu duration-300 text-black;
+  @apply border-[1px] transition-all ease-cubic-menu duration-300;
+
+  &[data-variant="primary"] {
+    @apply border-brand text-black;
+  }
+
+  &[data-variant="secondary"] {
+    @apply border-white/20 text-white backdrop-blur;
+  }
 
   &:hover {
-    @apply border-[1px] border-white/20 text-white;
-    &::after {
-      @apply bg-white top-full;
+    @apply border-[1px];
+
+    &[data-variant="primary"] {
+      &[data-size="sm"] {
+        @apply text-white border-white/20;
+      }
+
+      &[data-size="lg"] {
+        @apply text-brand border-brand;
+      }
+
+      &::after {
+        @apply top-full;
+
+        &[data-size="sm"] {
+          @apply bg-white;
+        }
+
+        &[data-size="lg"] {
+          @apply bg-brand;
+        }
+      }
+    }
+
+    &[data-variant="secondary"] {
+      @apply text-black;
+
+      &::after {
+        @apply top-0;
+      }
     }
   }
 
   &::after {
     content: "";
-    @apply absolute bg-brand transition-all ease-cubic-menu duration-300 -z-10 left-0 w-full h-full top-0;
+    @apply absolute transition-all ease-cubic-menu duration-300 -z-10 left-0 w-full h-full;
+
+    &[data-variant="primary"] {
+      @apply bg-brand top-0;
+    }
+
+    &[data-variant="secondary"] {
+      @apply bg-white top-full;
+    }
   }
 }

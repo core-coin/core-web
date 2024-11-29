@@ -1,13 +1,39 @@
 import Spline from "@splinetool/react-spline";
+import { Button, SectionTitle } from "@src/components";
+import clsx from "clsx";
+import styles from "./styles.module.scss";
 
 export const IntroSection = () => {
   return (
-    <section className="h-screen w-screen">
+    <section className="flex h-screen w-screen items-center justify-center">
       <Spline
-        className="opacity-80"
+        className="absolute inset-0 opacity-80"
         scene="/models/home-intro.splinecode"
         onLoad={(app) => app.setZoom(0.3)}
       />
+      <div className="z-10 flex w-full max-w-[1400px] flex-col items-center justify-center gap-6">
+        <SectionTitle title="core blockchain" />
+        <h3
+          className={clsx(
+            styles["title"],
+            "font-thin tracking-[-0.25rem] text-white",
+          )}
+        >
+          The Real-World Blockchain
+        </h3>
+        <p className="text-lg font-thin leading-6 text-white/[66%]">
+          Decentralized, secure, and scalable real-world solutions. A Layer-1
+          Proof of Work Blockchain.
+        </p>
+        <div className="flex flex-row gap-8 p-8">
+          <Button as="a" href="/" size="lg">
+            Start Building
+          </Button>
+          <Button as="a" href="/" size="lg" variant="secondary">
+            Explore CORE
+          </Button>
+        </div>
+      </div>
     </section>
   );
 };

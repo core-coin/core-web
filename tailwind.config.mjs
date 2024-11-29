@@ -21,6 +21,12 @@ export default {
       transitionDuration: {
         400: "0.4s",
       },
+      fontSize: {
+        xxs: "0.625rem",
+      },
+      letterSpacing: {
+        third: "0.33rem",
+      },
     },
   },
   plugins: [],
