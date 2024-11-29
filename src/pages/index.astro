@@ -1,7 +1,9 @@
 ---
 import MainLayout from "@src/layouts/MainLayout.astro";
+import { IntroSection } from "@src/sections/home";
 ---
 
 <MainLayout>
+  <IntroSection client:load />
   The Real-World Blockchain
 </MainLayout>
