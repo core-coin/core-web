@@ -29,5 +29,16 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".bg-clip-text": {
+          "-webkit-background-clip": "text",
+        },
+        ".text-transparent": {
+          "-webkit-text-fill-color": "transparent",
+        },
+      });
+    },
+  ],
 };

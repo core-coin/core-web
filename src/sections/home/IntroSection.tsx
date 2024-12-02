@@ -9,10 +9,9 @@ export const IntroSection = () => {
       <Spline
         className="absolute inset-0 opacity-80"
         scene="/models/home-intro.splinecode"
-        onLoad={(app) => app.setZoom(0.3)}
       />
       <div className="z-10 flex w-full max-w-[1400px] flex-col items-center justify-center gap-6">
-        <SectionTitle title="core blockchain" />
+        <SectionTitle title="core blockchain" variant="secondary" />
         <h3
           className={clsx(
             styles["title"],

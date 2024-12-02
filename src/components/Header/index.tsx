@@ -5,7 +5,7 @@ import { Button } from "..";
 export function Header() {
   return (
     <motion.header
-      className="fixed inset-x-0 z-10 flex justify-center bg-black/75 backdrop-blur-lg"
+      className="fixed inset-x-0 z-40 flex justify-center bg-black/75 backdrop-blur-lg"
       initial={{ opacity: 0, translateY: -20, scale: 1.1 }}
       animate={{ opacity: 1, translateY: 0, scale: 1 }}
       transition={{ type: "spring", stiffness: 30 }}
