@@ -1,9 +1,10 @@
 ---
 import MainLayout from "@src/layouts/MainLayout.astro";
-import { IntroSection, LeadingFeaturesSection } from "@src/sections/home";
+import { IntroSection, LeadingFeaturesSection, MetricsSection } from "@src/sections/home";
 ---
 
 <MainLayout>
   <IntroSection client:load />
   <LeadingFeaturesSection client:load />
+  <MetricsSection client:load />
 </MainLayout>
