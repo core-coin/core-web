@@ -1,15 +1,54 @@
 import { Button, SectionTitle } from "@src/components";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
 
 interface IMetricItemProps {
   value: string;
   title: string;
   valueColor: string;
+  index: number;
 }
 
-const MetricItem = ({ value, title, valueColor }: IMetricItemProps) => (
-  <div className="flex flex-col gap-3">
+const metricsData = [
+  {
+    value: "7M+",
+    title: "Transactions",
+    valueColor:
+      "bg-[linear-gradient(315deg,_rgb(0,117,51)_0%,_rgb(0,255,111)_100%)]",
+  },
+  {
+    value: "51M+",
+    title: "Circulating Supply",
+    valueColor:
+      "bg-[linear-gradient(315deg,_rgb(39,125,76)_0%,_rgb(82,255,157)_100%)]",
+  },
+  {
+    value: "930M",
+    title: "Network Difficulty",
+    valueColor:
+      "bg-[linear-gradient(315deg,_rgb(82,122,100)_0%,_rgb(171,255,207)_100%)]",
+  },
+  {
+    value: "8k+",
+    title: "Active Wallets",
+    valueColor:
+      "bg-[linear-gradient(315deg,_rgb(115,125,119)_0%,_rgb(237,255,245)_100%)]",
+  },
+];
+
+const MetricItem = ({ value, title, valueColor, index }: IMetricItemProps) => (
+  <motion.div
+    className="flex flex-col gap-3"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    transition={{ duration: 0.3, delay: index * 0.2 }}
+    variants={{
+      visible: { opacity: 1, translateY: 0 },
+      hidden: { opacity: 0, translateY: "20px" },
+    }}
+  >
     <span
       className={clsx(
         twMerge(
@@ -23,7 +62,7 @@ const MetricItem = ({ value, title, valueColor }: IMetricItemProps) => (
     <span className="text-lg font-thin leading-normal text-white/[66%]">
       {title}
     </span>
-  </div>
+  </motion.div>
 );
 
 export const MetricsSection = () => (
@@ -46,28 +85,17 @@ export const MetricsSection = () => (
           Learn More
         </Button>
       </div>
-      <div className="flex flex-1 flex-col items-start gap-16">
-        <MetricItem
-          value="7M+"
-          title="Transactions"
-          valueColor="bg-[linear-gradient(315deg,_rgb(0,117,51)_0%,_rgb(0,255,111)_100%)]"
-        />
-        <MetricItem
-          value="51M+"
-          title="Circulating Supply"
-          valueColor="bg-[linear-gradient(315deg,_rgb(39,125,76)_0%,_rgb(82,255,157)_100%)]"
-        />
-        <MetricItem
-          value="930M"
-          title="Network Difficulty"
-          valueColor="bg-[linear-gradient(315deg,_rgb(82,122,100)_0%,_rgb(171,255,207)_100%)]"
-        />
-        <MetricItem
-          value="8k+"
-          title="Active Wallets"
-          valueColor="bg-[linear-gradient(315deg,_rgb(115,125,119)_0%,_rgb(237,255,245)_100%)]"
-        />
-      </div>
+      <motion.div className="flex flex-1 flex-col items-start gap-16">
+        {metricsData.map((metricData, index) => (
+          <MetricItem
+            index={index}
+            key={metricData.title}
+            value={metricData.value}
+            title={metricData.title}
+            valueColor={metricData.valueColor}
+          />
+        ))}
+      </motion.div>
     </div>
   </div>
 );
