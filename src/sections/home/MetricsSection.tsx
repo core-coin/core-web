@@ -1,4 +1,4 @@
-import { Button, SectionTitle } from "@src/components";
+import { BlurTextReveal, Button, SectionTitle } from "@src/components";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
@@ -74,12 +74,13 @@ export const MetricsSection = () => (
           <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03rem] text-transparent">
             Be the change you want to see in the chain
           </h3>
-          <p className="text-lg font-thin leading-normal text-white/[66%]">
-            The Core Blockchain allows for the decentralized management of
+          <BlurTextReveal
+            className="text-lg font-thin leading-normal text-white/[66%]"
+            sentence="The Core Blockchain allows for the decentralized management of
             physical infrastructures (DePIN), tokenization and digital
             management of real-world assets (RWA), and the optimization of
-            real-world processes for more efficient use (RWP).
-          </p>
+            real-world processes for more efficient use (RWP)."
+          />
         </div>
         <Button as="a" href="/" variant="secondary" size="lg">
           Learn More

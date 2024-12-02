@@ -1,4 +1,4 @@
-import { SectionTitle } from "@src/components";
+import { BlurTextReveal, SectionTitle } from "@src/components";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 
@@ -34,9 +34,10 @@ const LeadingFeatureItem = ({
         <span className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-[32px] font-thin leading-[1.3] tracking-[-0.03rem] text-transparent">
           {title}
         </span>
-        <p className="text-lg font-thin leading-normal text-white/[66%]">
-          {description}
-        </p>
+        <BlurTextReveal
+          className="text-lg font-thin leading-normal text-white/[66%]"
+          sentence={description}
+        />
       </div>
     </div>
   );
