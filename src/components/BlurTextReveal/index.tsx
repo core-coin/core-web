@@ -42,7 +42,7 @@ export const BlurTextReveal = ({
             <motion.span
               /* eslint-disable-next-line react/no-array-index-key */
               key={`${word}-${idx}`}
-              className="text-black opacity-0 dark:text-white"
+              className="opacity-0"
               style={{
                 filter: filter ? "blur(24px)" : "none",
               }}
