@@ -3,3 +3,4 @@ export * from "./LeadingFeaturesSection";
 export * from "./MetricsSection";
 export * from "./CoreOverviewParallaxSection";
 export * from "./StoreAssetsSection";
+export * from "./ExploreSection";
