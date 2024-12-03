@@ -9,6 +9,10 @@
     @apply border-white/20 text-white backdrop-blur;
   }
 
+  &[data-variant="bordered"] {
+    @apply bg-white/[1%] border-white/20 text-white backdrop-blur;
+  }
+
   &:hover {
     @apply border-[1px];
 
@@ -40,6 +44,10 @@
       &::after {
         @apply top-0;
       }
+    }
+
+    &[data-variant="bordered"] {
+      @apply border-brand text-brand;
     }
   }
 
