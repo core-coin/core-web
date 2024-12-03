@@ -23,17 +23,23 @@ export const SectionTitle = ({
     secondary: "",
   };
 
+  const textClasses = {
+    primary:
+      "bg-[linear-gradient(135deg,_rgb(255,255,255)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-transparent",
+    secondary: "text-white",
+  };
+
   return (
     <span className={borderClasses[variant]}>
       <span
         className={clsx(
           twMerge(
             variantClasses[variant],
-            "rounded-full px-5 py-3 font-regular uppercase tracking-[0.20rem] text-white text-xxs",
+            "rounded-full px-5 py-3 font-regular uppercase tracking-[0.20rem] text-xxs",
           ),
         )}
       >
-        {title}
+        <span className={textClasses[variant]}>{title}</span>
       </span>
     </span>
   );

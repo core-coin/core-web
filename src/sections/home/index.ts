@@ -1,4 +1,4 @@
 export * from "./IntroSection";
 export * from "./LeadingFeaturesSection";
 export * from "./MetricsSection";
-export * from "./BlockchainTrilemmaSection";
+export * from "./CoreOverviewParallaxSection";

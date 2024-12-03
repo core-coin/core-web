@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 interface IBlurTextRevealProps {
   sentence: string;
@@ -57,7 +59,14 @@ export const BlurTextReveal = ({
 
   return (
     <div className={className}>
-      <div className="text-lg font-thin leading-normal text-white/[66%]">
+      <div
+        className={clsx(
+          twMerge(
+            "text-lg font-thin leading-normal text-white/[66%]",
+            className,
+          ),
+        )}
+      >
         {renderWords()}
       </div>
     </div>

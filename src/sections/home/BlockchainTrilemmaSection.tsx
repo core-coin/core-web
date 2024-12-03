@@ -4,6 +4,7 @@ import {
   type ModalRef,
   SectionTitle,
 } from "@src/components";
+import { useTransform, motion, type MotionValue } from "framer-motion";
 import { Plus } from "@phosphor-icons/react";
 import { useRef } from "react";
 import Modal from "@src/components/Modal";
@@ -85,6 +86,10 @@ interface ITrilemmaItemProps {
   description: string;
 }
 
+interface IBlockchainTrilemmaSectionProps {
+  scrollYProgress: MotionValue<number>;
+}
+
 const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
   const modalRef = useRef<ModalRef>(null);
   const modalContent = trilemmaModalContent[name];
@@ -130,10 +135,18 @@ const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
   );
 };
 
-export const BlockchainTrilemmaSection = () => {
+export const BlockchainTrilemmaSection = ({
+  scrollYProgress,
+}: IBlockchainTrilemmaSectionProps) => {
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+
   return (
     <>
-      <div className="flex w-full justify-center py-[100px]">
+      <motion.div
+        className="sticky top-20 flex w-full justify-center py-[100px]"
+        style={{ scale, opacity }}
+      >
         <div className="flex w-full max-w-[1200px] flex-col gap-16">
           <div className="flex flex-1 flex-col items-center gap-5">
             <SectionTitle title="ACHIEVING PERFECT BALANCE" />
@@ -166,7 +179,7 @@ export const BlockchainTrilemmaSection = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
