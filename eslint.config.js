@@ -21,6 +21,7 @@ export default tseslint.config(
       "react/react-in-jsx-scope": "off",
       "react/button-has-type": "error",
       "react/jsx-key": "error",
+      "react/display-name": "off",
     },
   },
 );
