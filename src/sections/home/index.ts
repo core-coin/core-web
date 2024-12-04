@@ -6,3 +6,4 @@ export * from "./StoreAssetsSection";
 export * from "./ExploreSection";
 export * from "./CreateYourOwnSection";
 export * from "./NetworksSection";
+export * from "./BecomePartnerSection";
