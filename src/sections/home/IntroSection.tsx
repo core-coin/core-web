@@ -1,7 +1,6 @@
 import Spline from "@splinetool/react-spline";
 import { Button, SectionTitle } from "@src/components";
 import clsx from "clsx";
-import styles from "./styles.module.scss";
 
 export const IntroSection = () => {
   return (
@@ -14,8 +13,7 @@ export const IntroSection = () => {
         <SectionTitle title="core blockchain" variant="secondary" />
         <h3
           className={clsx(
-            styles["title"],
-            "font-thin tracking-[-0.25rem] text-white",
+            "text-[80px] font-thin leading-[1.2] tracking-[-0.25rem] text-white",
           )}
         >
           The Real-World Blockchain

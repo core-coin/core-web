@@ -1,4 +1,17 @@
-.title {
-  font-size: 80px;
-  line-height: 1.2;
+.pulse {
+  @apply relative;
+
+  &::after {
+    content: "";
+    @apply absolute size-full border border-white/15 rounded-full inset-0;
+  }
+}
+
+.pulse-magic {
+  @apply relative;
+
+  &::after {
+    content: "";
+    @apply absolute size-full border border-white/20 rounded-full inset-0;
+  }
 }

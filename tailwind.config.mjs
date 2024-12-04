@@ -27,10 +27,34 @@ export default {
       letterSpacing: {
         third: "0.33rem",
       },
+      keyframes: {
+        "scroll-x": {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-100%)",
+          },
+        },
+        pulse: {
+          "40%": {
+            opacity: 1,
+            transform: "scale(1)",
+          },
+          "100%": {
+            opacity: 0,
+            transform: "scale(2.2)",
+          },
+        },
+      },
+      animation: {
+        "scroll-x": "scroll-x 40s linear infinite",
+        pulse: "pulse 3s linear infinite",
+      },
     },
   },
   plugins: [
-    function ({ addUtilities }) {
+    function ({ addUtilities, matchUtilities, theme }) {
       addUtilities({
         ".bg-clip-text": {
           "-webkit-background-clip": "text",
@@ -38,7 +62,29 @@ export default {
         ".text-transparent": {
           "-webkit-text-fill-color": "transparent",
         },
+        ".animation-reverse": {
+          "animation-direction": "reverse",
+        },
+        ".gradient-mask": {
+          "mask-image":
+            "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)",
+        },
+        ".magic-gradient-mask": {
+          mask: "radial-gradient(100% 75% at 50% 71.1%,#000000 31.012457770270263%,rgba(0,0,0,0) 89.08009572072073%) add",
+        },
       });
+      matchUtilities(
+        {
+          "animation-delay": (value) => {
+            return {
+              "animation-delay": value,
+            };
+          },
+        },
+        {
+          values: theme("transitionDelay"),
+        },
+      );
     },
   ],
 };
