@@ -48,7 +48,7 @@ export default {
         },
       },
       animation: {
-        "scroll-x": "scroll-x 30s linear infinite",
+        "scroll-x": "scroll-x 10s linear infinite",
         pulse: "pulse 3s linear infinite",
       },
     },
@@ -78,6 +78,11 @@ export default {
           "animation-delay": (value) => {
             return {
               "animation-delay": value,
+            };
+          },
+          "animation-duration": (value) => {
+            return {
+              "animation-duration": value,
             };
           },
         },
