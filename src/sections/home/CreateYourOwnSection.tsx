@@ -36,13 +36,13 @@ export const CreateYourOwnSection = () => {
           <div className="relative flex h-[170px] w-full flex-row items-center">
             <div className="flex flex-1 gap-5 overflow-x-hidden gradient-mask">
               <div className="flex animate-scroll-x gap-5 whitespace-nowrap opacity-60 will-change-transform animation-reverse">
-                {Array.from({ length: 10 }).map((_, i) => (
+                {Array.from({ length: 7 }).map((_, i) => (
                   // eslint-disable-next-line react/no-array-index-key
                   <CircleItem key={`circle-item-${i}`} />
                 ))}
               </div>
               <div className="flex animate-scroll-x gap-5 whitespace-nowrap opacity-60 will-change-transform animation-reverse">
-                {Array.from({ length: 10 }).map((_, i) => (
+                {Array.from({ length: 7 }).map((_, i) => (
                   // eslint-disable-next-line react/no-array-index-key
                   <CircleItem key={`circle-item-duplicated-${i}`} />
                 ))}
@@ -77,13 +77,13 @@ export const CreateYourOwnSection = () => {
             </div>
             <div className="flex flex-1 gap-5 overflow-x-hidden gradient-mask">
               <div className="flex animate-scroll-x gap-5 whitespace-nowrap opacity-60 will-change-transform animation-reverse">
-                {Array.from({ length: 10 }).map((_, i) => (
+                {Array.from({ length: 7 }).map((_, i) => (
                   // eslint-disable-next-line react/no-array-index-key
                   <CircleItem key={`circle-item-logo-${i}`} hasLogo />
                 ))}
               </div>
               <div className="flex animate-scroll-x gap-5 whitespace-nowrap opacity-60 will-change-transform animation-reverse">
-                {Array.from({ length: 10 }).map((_, i) => (
+                {Array.from({ length: 7 }).map((_, i) => (
                   <CircleItem
                     // eslint-disable-next-line react/no-array-index-key
                     key={`circle-item-logo-duplicated-${i}`}

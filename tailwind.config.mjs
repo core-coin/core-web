@@ -33,7 +33,7 @@ export default {
             transform: "translateX(0)",
           },
           "100%": {
-            transform: "translateX(-100%)",
+            transform: "translateX(calc(-100% - 20px))",
           },
         },
         pulse: {
@@ -48,7 +48,7 @@ export default {
         },
       },
       animation: {
-        "scroll-x": "scroll-x 40s linear infinite",
+        "scroll-x": "scroll-x 30s linear infinite",
         pulse: "pulse 3s linear infinite",
       },
     },
