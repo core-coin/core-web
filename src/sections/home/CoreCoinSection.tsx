@@ -1,4 +1,5 @@
 import { BlurTextReveal, Button, SectionTitle } from "@src/components";
+import Spline from "@splinetool/react-spline";
 
 export const CoreCoinSection = () => (
   <div className="sticky top-[200px] flex w-full justify-center bg-black py-[196px]">
@@ -39,8 +40,11 @@ export const CoreCoinSection = () => (
           </Button>
         </div>
       </div>
-      <div className="sticky top-[160px] flex h-[650px] flex-1 flex-col items-start gap-16 bg-white/5">
-        Spline model will be placed here.
+      <div className="sticky top-[160px] flex h-[650px] flex-1 flex-col items-start gap-16">
+        <Spline
+          className="pointer-events-none"
+          scene="/models/coin.splinecode"
+        />
       </div>
     </div>
   </div>
