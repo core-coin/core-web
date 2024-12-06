@@ -10,6 +10,9 @@ export default {
       black: 900,
     },
     extend: {
+      screens: {
+        lg: "1400px",
+      },
       colors: {
         brand: "#00FF6F",
         "brand-100": "#A8E87B",
