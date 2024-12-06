@@ -1,7 +1,7 @@
 import { Button } from "@src/components";
 
 export const BecomePartnerSection = () => (
-  <div className="flex justify-center py-[100px]">
+  <div className="flex justify-center bg-black py-[100px]">
     <div className="flex w-full max-w-[1200px] gap-8 rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,.1)_0%,rgba(0,0,0,0)_100%)] p-16">
       <div className="flex flex-1 flex-col items-center gap-10 px-16 py-8">
         <div className="flex flex-col items-center gap-4">

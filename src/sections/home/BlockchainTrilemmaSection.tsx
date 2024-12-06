@@ -144,7 +144,7 @@ export const BlockchainTrilemmaSection = ({
   return (
     <>
       <motion.div
-        className="sticky top-20 flex w-full justify-center py-[100px]"
+        className="sticky top-20 flex w-full justify-center bg-black py-[100px]"
         style={{ scale, opacity }}
       >
         <div className="flex w-full max-w-[1200px] flex-col gap-16">

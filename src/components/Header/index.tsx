@@ -17,14 +17,11 @@ export function Header() {
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     const direction = current! - scrollYProgress.getPrevious()!;
     isScrolled.current = true;
-    if (scrollYProgress.get() < 0.05) {
-      setVisible(false);
+
+    if (direction < 0) {
+      setVisible(true);
     } else {
-      if (direction < 0) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
+      setVisible(false);
     }
   });
 

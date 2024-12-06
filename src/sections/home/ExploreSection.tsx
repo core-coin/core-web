@@ -31,7 +31,7 @@ const RevealItem = ({
 };
 
 export const ExploreSection = () => (
-  <div className="flex w-full justify-center py-[196px]">
+  <div className="flex w-full justify-center bg-black py-[196px]">
     <div className="relative flex w-full max-w-[1200px] gap-[120px]">
       <div className="sticky top-[200px] flex h-min w-[33%] flex-col items-start gap-14">
         <div className="flex flex-col items-start gap-5">

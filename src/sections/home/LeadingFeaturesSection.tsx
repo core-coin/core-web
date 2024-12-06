@@ -44,7 +44,7 @@ const LeadingFeatureItem = ({
 };
 
 export const LeadingFeaturesSection = () => (
-  <div className="flex w-full justify-center py-16">
+  <div className="flex w-full justify-center bg-black py-16">
     <div className="w-full max-w-[1400px]">
       <div className="flex flex-col items-center gap-5 p-12">
         <SectionTitle title="real-world assets" />

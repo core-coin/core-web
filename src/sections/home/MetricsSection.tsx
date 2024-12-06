@@ -66,7 +66,7 @@ const MetricItem = ({ value, title, valueColor, index }: IMetricItemProps) => (
 );
 
 export const MetricsSection = () => (
-  <div className="flex w-full justify-center py-[196px]">
+  <div className="flex w-full justify-center bg-black py-[196px]">
     <div className="flex w-full max-w-[1200px] gap-[300px]">
       <div className="flex flex-1 flex-col items-start gap-14">
         <div className="flex flex-col items-start gap-5">

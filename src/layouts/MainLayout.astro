@@ -1,6 +1,6 @@
 ---
 import "@src/styles/global.css";
-import { Header } from "@src/components";
+import { Header, Footer } from "@src/components";
 ---
 
 <html lang="en">
@@ -14,5 +14,6 @@ import { Header } from "@src/components";
   <body>
     <Header client:load />
     <slot />
+    <Footer client:load />
   </body>
 </html>

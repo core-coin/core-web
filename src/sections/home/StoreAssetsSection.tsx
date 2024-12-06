@@ -44,7 +44,7 @@ const StoreAssetMethod = ({
 export const StoreAssetsSection = () => {
   return (
     <>
-      <motion.div className="flex w-full justify-center pb-[120px] pt-1">
+      <motion.div className="flex w-full justify-center bg-black pb-[120px] pt-1">
         <div className="flex w-full max-w-[1200px] flex-col gap-16">
           <div className="flex flex-1 flex-col items-start gap-5">
             <SectionTitle title="REAL-WORLD ASSETS" />

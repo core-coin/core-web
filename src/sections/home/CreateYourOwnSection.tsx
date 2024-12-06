@@ -17,7 +17,7 @@ const CircleItem = ({ hasLogo = false }: { hasLogo?: boolean }) => (
 export const CreateYourOwnSection = () => {
   return (
     <>
-      <div className="flex w-full justify-center py-[100px]">
+      <div className="flex w-full justify-center bg-black py-[100px]">
         <div className="flex w-full max-w-[1200px] flex-col items-center gap-16">
           <div className="flex flex-1 flex-col items-center gap-5">
             <SectionTitle title="one standard. unlimited freedom" />

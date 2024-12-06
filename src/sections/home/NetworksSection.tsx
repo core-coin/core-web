@@ -43,7 +43,7 @@ const NetworkItem = ({ icon, title, description }: INetworkItemProps) => (
 );
 
 export const NetworksSection = () => (
-  <div className="flex w-full justify-center py-[196px]">
+  <div className="flex w-full justify-center bg-black py-[196px]">
     <div className="relative flex w-full max-w-[1200px] gap-[200px]">
       <div className="sticky top-[200px] flex h-min flex-1 flex-col items-start gap-14">
         <SectionTitle title="core blockchain networks" />
