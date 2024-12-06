@@ -6,7 +6,7 @@ import { Portal } from "@src/components";
 import { type MouseEvent, useRef, useState } from "react";
 import styles from "./styles.module.scss";
 
-interface IMenuItemProps {
+export interface IMenuItemProps {
   title: string;
   megaMenu: IMegaMenu;
 }
