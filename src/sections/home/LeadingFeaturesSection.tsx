@@ -1,12 +1,14 @@
 import { BlurTextReveal, SectionTitle } from "@src/components";
 import clsx from "clsx";
 import type { ReactNode } from "react";
+import Spline from "@splinetool/react-spline";
 
 interface ILeadingFeatureItemProps {
   variant: "primary" | "secondary";
   title: string | ReactNode;
   subtitle: string;
   description: string;
+  bg: string;
 }
 
 const LeadingFeatureItem = ({
@@ -14,6 +16,7 @@ const LeadingFeatureItem = ({
   title,
   subtitle,
   description,
+  bg,
 }: ILeadingFeatureItemProps) => {
   const variantClasses = {
     primary: "flex-1",
@@ -24,9 +27,10 @@ const LeadingFeatureItem = ({
     <div
       className={clsx(
         variantClasses[variant],
-        "bg-[linear-gradient(135deg,#121212 0%,rgba(0,0,0,.85) 52.702702702702695%,rgba(0,0,0,.65) 100%)] flex h-[480px] rounded-3xl border border-white/10 backdrop-blur-xl",
+        "bg-[linear-gradient(135deg,#121212 0%,rgba(0,0,0,.85) 52.702702702702695%,rgba(0,0,0,.65) 100%)] flex h-[480px] overflow-hidden rounded-3xl border border-white/10 backdrop-blur-xl",
       )}
     >
+      <Spline className="pointer-events-none absolute inset-0" scene={bg} />
       <div className="absolute bottom-14 left-14 flex w-[55%] flex-col gap-5">
         <span className="text-[13px] font-thin uppercase leading-none tracking-third text-white/50">
           {subtitle}
@@ -63,12 +67,14 @@ export const LeadingFeaturesSection = () => (
             }
             subtitle="REAL ASSETS"
             description="Transforming them into digital goods you can utilize, distribute, and protect. Anything real can have a tangible presence on our blockchain network."
+            bg="/models/real-assets.splinecode"
           />
           <LeadingFeatureItem
             variant="secondary"
             title="Verify and Secure Identities"
             subtitle="REAL IDENTITIES"
             description="All interactions within the Core ecosystem are verified and transparent. You never have to second-guess the user you are interacting with."
+            bg="/models/real-identities.splinecode"
           />
         </div>
         <div className="flex gap-2">
@@ -77,12 +83,14 @@ export const LeadingFeaturesSection = () => (
             title="Integrate and Build Transparent Systems"
             subtitle="REAL INFRASTRUCTURE"
             description="To improve the transparency and decentralization of your systems and processes. Developers can integrate our infrastructure or build their own on the blockchain."
+            bg="/models/real-infrastructure.splinecode"
           />
           <LeadingFeatureItem
             variant="primary"
             title="Seamless Connectivity Without the Internet"
             subtitle="REAL CONNECTIVITY"
-            description="The Core Ecosystem facilitates data transfers and streaming using the Lunaº Mesh network. With Luna, you’re able to stay completely connected without the internet. Even in the event of a disaster. "
+            description="The Core Ecosystem facilitates data transfers and streaming using the Lunaº Mesh network. With Luna, you’re able to stay completely connected without the internet. Even in the event of a disaster."
+            bg="/models/real-connectivity.splinecode"
           />
         </div>
       </div>
