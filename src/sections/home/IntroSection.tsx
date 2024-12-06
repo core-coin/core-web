@@ -6,7 +6,7 @@ export const IntroSection = () => {
   return (
     <section className="flex h-screen w-screen items-center justify-center">
       <Spline
-        className="absolute inset-0 opacity-80"
+        className="pointer-events-none absolute inset-0 opacity-80"
         scene="/models/home-intro.splinecode"
       />
       <div className="z-10 flex w-full max-w-[1400px] flex-col items-center justify-center gap-6">
