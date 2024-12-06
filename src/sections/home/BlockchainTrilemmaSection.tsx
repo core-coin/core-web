@@ -8,6 +8,7 @@ import { useTransform, motion, type MotionValue } from "framer-motion";
 import { Plus } from "@phosphor-icons/react";
 import { useRef } from "react";
 import Modal from "@src/components/Modal";
+import Spline from "@splinetool/react-spline";
 
 const trilemmaModalContent = {
   scalability: {
@@ -97,6 +98,10 @@ const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
   return (
     <>
       <div className="relative flex h-[402px] flex-1 rounded-2xl border border-white/[10%] backdrop-blur-lg">
+        <Spline
+          className="pointer-events-none absolute inset-0"
+          scene={`/models/${name}.splinecode`}
+        />
         <div className="absolute inset-x-0 bottom-0 flex flex-row gap-10 p-8">
           <div className="flex flex-col gap-4">
             <span className="text-[26px] font-regular leading-[1.4em] tracking-[-0.04em]">
