@@ -53,29 +53,29 @@ const MetricItem = ({ value, title, valueColor, index }: IMetricItemProps) => (
       className={clsx(
         twMerge(
           valueColor,
-          "bg-clip-text text-[100px] font-thin tracking-[-0.02em] text-transparent leading-[1.2em]",
+          "bg-clip-text text-[100px] font-thin tracking-[-0.02em] text-transparent leading-[1.2em] max-lg:text-[72px]",
         ),
       )}
     >
       {value}
     </span>
-    <span className="text-lg font-thin leading-normal text-white/[66%]">
+    <span className="text-lg font-thin leading-normal text-white/[66%] max-lg:text-[15px]">
       {title}
     </span>
   </motion.div>
 );
 
 export const MetricsSection = () => (
-  <div className="flex w-full justify-center bg-black py-[196px]">
-    <div className="flex w-full max-w-[1200px] gap-[300px]">
+  <div className="flex w-full justify-center bg-black py-[196px] max-lg:!p-8">
+    <div className="flex w-full max-w-[1200px] gap-[300px] max-lg:flex-col max-lg:gap-16">
       <div className="flex flex-1 flex-col items-start gap-14">
         <div className="flex flex-col items-start gap-5">
           <SectionTitle title="TRANSFORM THE REAL WORLD" />
-          <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03rem] text-transparent">
+          <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-[32px]">
             Be the change you want to see in the chain
           </h3>
           <BlurTextReveal
-            className="text-lg font-thin leading-normal text-white/[66%]"
+            className="text-lg font-thin leading-normal text-white/[66%] max-lg:text-[15px]"
             sentence="The Core Blockchain allows for the decentralized management of
             physical infrastructures (DePIN), tokenization and digital
             management of real-world assets (RWA), and the optimization of

@@ -27,14 +27,14 @@ const LeadingFeatureItem = ({
     <div
       className={clsx(
         variantClasses[variant],
-        "bg-[linear-gradient(135deg,#121212 0%,rgba(0,0,0,.85) 52.702702702702695%,rgba(0,0,0,.65) 100%)] flex h-[480px] overflow-hidden rounded-3xl border border-white/10 backdrop-blur-xl max-lg:w-full max-lg:flex-none",
+        "bg-[linear-gradient(135deg,#121212 0%,rgba(0,0,0,.85) 52.702702702702695%,rgba(0,0,0,.65) 100%)] relative flex h-[480px] overflow-hidden rounded-3xl border border-white/10 backdrop-blur-xl max-lg:w-full max-lg:flex-none",
       )}
     >
       <Spline
         className="pointer-events-none absolute inset-0 max-lg:flex max-lg:items-center max-lg:justify-end max-lg:[&>canvas]:!h-min max-lg:[&>canvas]:!w-full"
         scene={bg}
       />
-      <div className="absolute bottom-14 left-14 flex w-[55%] flex-col gap-5 max-lg:w-full max-lg:gap-3">
+      <div className="absolute bottom-14 left-14 flex w-[55%] flex-col gap-5 max-lg:inset-x-8 max-lg:w-auto max-lg:gap-3">
         <span className="text-[13px] font-thin uppercase leading-none tracking-third text-white/50">
           {subtitle}
         </span>
@@ -52,7 +52,7 @@ const LeadingFeatureItem = ({
 
 export const LeadingFeaturesSection = () => {
   return (
-    <div className="flex w-full justify-center bg-black py-16">
+    <div className="flex w-full justify-center bg-black py-16 max-lg:p-4">
       <div className="w-full max-w-screen-lg">
         <div className="flex flex-col items-center gap-5 p-12 max-lg:p-0">
           <SectionTitle title="real-world assets" />
@@ -60,7 +60,7 @@ export const LeadingFeaturesSection = () => {
             What Makes Core Blockchain <br /> the Leading Real-World Blockchain?
           </h3>
         </div>
-        <div className="mx-auto flex max-w-[1200px] flex-col flex-wrap gap-2 p-8">
+        <div className="mx-auto flex max-w-[1200px] flex-col flex-wrap gap-2 p-8 max-lg:p-0">
           <div className="flex gap-2 max-lg:flex-wrap">
             <LeadingFeatureItem
               variant="primary"
