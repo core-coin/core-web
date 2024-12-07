@@ -1,7 +1,7 @@
 export const Footer = () => (
-  <footer className="sticky bottom-0 -z-10 flex h-screen flex-col items-center gap-16 bg-brand py-16">
-    <div className="flex size-full max-w-[1400px] flex-col items-center justify-between">
-      <div className="flex flex-row gap-12">
+  <footer className="sticky bottom-0 -z-10 flex h-screen flex-col items-center gap-16 bg-brand py-16 max-lg:h-min max-lg:max-h-screen max-lg:overflow-y-visible max-lg:p-0">
+    <div className="flex size-full max-w-screen-lg flex-col items-center justify-between max-lg:justify-center max-lg:gap-12 max-lg:bg-brand max-lg:p-8 max-lg:pt-20">
+      <div className="flex flex-row gap-12 max-lg:flex-col max-lg:gap-6">
         <div className="flex flex-1">
           <img
             src="/images/core-sign.svg"
@@ -10,13 +10,13 @@ export const Footer = () => (
           />
         </div>
         <div className="flex flex-1">
-          <p className="text-[32px] font-regular leading-[1.25em] text-black">
+          <p className="text-[32px] font-regular leading-[1.25em] text-black max-lg:text-2xl">
             Transform the Real World. The future is being built on Core. Dont be
             left behind! Join the thousands of innovators.
           </p>
         </div>
       </div>
-      <div className="flex w-full flex-row gap-2.5">
+      <div className="flex w-full flex-row gap-2.5 max-lg:flex-col max-lg:gap-10">
         <div className="flex flex-1 flex-col gap-6">
           <span className="text-sm font-medium leading-[1.25em] text-black">
             Use
@@ -229,9 +229,9 @@ export const Footer = () => (
           </ul>
         </div>
       </div>
-      <div className="flex w-full justify-end gap-12 pt-[97px]">
-        <div />
-        <div className="flex flex-[0.5] flex-row gap-2.5">
+      <div className="flex w-full justify-end gap-12 pt-[97px] max-lg:flex-col max-lg:pt-0">
+        <div className="max-lg:hidden" />
+        <div className="flex flex-[0.5] flex-row gap-2.5 max-lg:flex-col max-lg:gap-12">
           <span className="flex-1 text-xs font-medium leading-normal text-black">
             © 2024 CORE FOUNDATION
           </span>
