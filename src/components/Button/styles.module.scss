@@ -53,7 +53,7 @@
 
   &::after {
     content: "";
-    @apply absolute transition-all ease-cubic-menu duration-300 -z-10 left-0 w-full h-full;
+    @apply absolute transition-all ease-cubic-menu duration-300 z-0 left-0 w-full h-full;
 
     &[data-variant="primary"] {
       @apply bg-brand top-0;

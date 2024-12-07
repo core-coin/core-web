@@ -32,7 +32,7 @@ const NetworkItem = ({ icon, title, description }: INetworkItemProps) => (
   <div className="flex flex-col gap-5">
     <div className="flex flex-row items-center">
       <img src={icon} alt={title} className="mr-4 w-12" />
-      <span className="text-[32px] font-thin leading-[1.3em] tracking-[-0.03rem] text-white">
+      <span className="text-[32px] font-thin leading-[1.3em] tracking-[-0.03rem] text-white max-lg:text-2xl">
         {title}
       </span>
     </div>
@@ -43,11 +43,11 @@ const NetworkItem = ({ icon, title, description }: INetworkItemProps) => (
 );
 
 export const NetworksSection = () => (
-  <div className="flex w-full justify-center bg-black py-[196px]">
-    <div className="relative flex w-full max-w-[1200px] gap-[200px]">
-      <div className="sticky top-[200px] flex h-min flex-1 flex-col items-start gap-14">
+  <div className="flex w-full justify-center bg-black py-[196px] max-lg:p-8">
+    <div className="relative flex w-full max-w-[1200px] gap-[200px] max-lg:flex-col max-lg:gap-16">
+      <div className="sticky top-[200px] flex h-min flex-1 flex-col items-start gap-14 max-lg:relative max-lg:top-0">
         <SectionTitle title="core blockchain networks" />
-        <h5 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[32px] font-thin leading-[1.3em] tracking-[-0.03rem] text-transparent">
+        <h5 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[32px] font-thin leading-[1.3em] tracking-[-0.03em] text-transparent max-lg:text-2xl">
           Explore the different networks Core Blockchain offers, each tailored
           to meet specific needs – from genuine transactions to experimental
           testing and enterprise-level solutions.

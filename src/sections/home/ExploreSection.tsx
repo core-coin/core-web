@@ -1,6 +1,7 @@
 import { BlurTextReveal, Button, SectionTitle } from "@src/components";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { type ReactNode, useRef } from "react";
+import Spline from "@splinetool/react-spline";
 
 const RevealItem = ({
   className,
@@ -31,16 +32,16 @@ const RevealItem = ({
 };
 
 export const ExploreSection = () => (
-  <div className="flex w-full justify-center bg-black py-[196px]">
-    <div className="relative flex w-full max-w-[1200px] gap-[120px]">
-      <div className="sticky top-[200px] flex h-min w-[33%] flex-col items-start gap-14">
+  <div className="flex w-full justify-center bg-black py-[196px] max-lg:p-6">
+    <div className="relative flex w-full max-w-[1200px] gap-[120px] max-lg:flex-col max-lg:p-2">
+      <div className="sticky top-[200px] flex h-min w-[33%] flex-col items-start gap-14 max-lg:relative max-lg:top-0 max-lg:w-full">
         <div className="flex flex-col items-start gap-5">
           <SectionTitle title="explore" />
-          <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03rem] text-transparent">
+          <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-[32px]">
             The Core Blockchain Ecosystem
           </h3>
           <BlurTextReveal
-            className="text-lg font-thin leading-normal text-white/[66%]"
+            className="text-lg font-thin leading-normal text-white/[66%] max-lg:w-full max-lg:text-[15px]"
             sentence="From smart buildings, entire city infrastructures, and a wide array of decentralized applications powered by Core Blockchain, our network offers a way to break away from centralization and monitoring and move to a privacy-first, more democratized and transparent future."
           />
         </div>
@@ -54,7 +55,7 @@ export const ExploreSection = () => (
             <img
               src="/images/corepass.avif"
               alt="CorePass"
-              className="absolute bottom-0 left-1/2 w-[90%] -translate-x-1/2"
+              className="absolute bottom-0 left-1/2 w-[90%] -translate-x-1/2 max-lg:w-1/2"
             />
             <img
               src="/images/corepass-logo.svg"
@@ -89,7 +90,7 @@ export const ExploreSection = () => (
             <img
               src="/images/ping-exchange.avif"
               alt="Ping Exchange"
-              className="absolute bottom-4 left-1/2 w-full -translate-x-1/2 scale-[1.07]"
+              className="absolute bottom-4 left-1/2 w-full -translate-x-1/2 scale-[1.07] max-lg:w-[65%]"
             />
             <img
               src="/images/ping-logo.svg"
@@ -123,7 +124,7 @@ export const ExploreSection = () => (
             <img
               src="/images/xcb-holder.avif"
               alt="XCB Holder"
-              className="absolute bottom-0 left-1/2 w-[90%] translate-x-[-46%]"
+              className="absolute bottom-0 left-1/2 w-[90%] translate-x-[-46%] max-lg:w-3/5"
             />
             <img
               src="/images/xcb-holder-logo.png"
@@ -152,8 +153,12 @@ export const ExploreSection = () => (
             </Button>
           </div>
         </RevealItem>
-        <RevealItem className="flex h-[620px] w-full items-end rounded-2xl border border-white/10 bg-[linear-gradient(135deg,#121212_0%,rgba(0,0,0,.85)_52.702702702702695%,rgba(0,0,0,.65)_100%)] backdrop-blur-lg">
-          <div className="flex flex-col items-start p-16">
+        <RevealItem className="flex h-[620px] w-full items-end rounded-2xl border border-white/10 bg-[linear-gradient(135deg,#121212_0%,rgba(0,0,0,.85)_52.702702702702695%,rgba(0,0,0,.65)_100%)] backdrop-blur-lg max-lg:h-min">
+          <Spline
+            scene="/models/real-infrastructure.splinecode"
+            className="pointer-events-none absolute inset-0 flex justify-end [&>canvas]:!h-min [&>canvas]:!w-full"
+          />
+          <div className="z-10 flex flex-col items-start p-16">
             <span className="block text-[13px] font-thin uppercase leading-none tracking-[0.33em] text-white/50">
               contribute to the ecosystem
             </span>

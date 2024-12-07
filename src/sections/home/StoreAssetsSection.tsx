@@ -26,11 +26,11 @@ const StoreAssetMethod = ({
           <span className="block text-[13px] font-thin uppercase leading-none tracking-[0.33em] text-white/50">
             {method}
           </span>
-          <span className="mt-2 block text-[32px] font-thin leading-[1.3em] tracking-[-0.03em]">
+          <span className="mt-2 block text-[32px] font-thin leading-[1.3em] tracking-[-0.03em] max-lg:text-2xl">
             {title}
           </span>
         </span>
-        <p className="my-5 text-sm font-thin leading-normal text-white/50">
+        <p className="my-5 text-sm font-thin leading-normal text-white/50 max-lg:mb-0">
           {description}
         </p>
       </div>
@@ -44,16 +44,19 @@ const StoreAssetMethod = ({
 export const StoreAssetsSection = () => {
   return (
     <>
-      <motion.div className="flex w-full justify-center bg-black pb-[120px] pt-1">
+      <motion.div className="flex w-full justify-center bg-black pb-[120px] pt-1 max-lg:px-8 max-lg:py-[100px]">
         <div className="flex w-full max-w-[1200px] flex-col gap-16">
           <div className="flex flex-1 flex-col items-start gap-5">
             <SectionTitle title="REAL-WORLD ASSETS" />
-            <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03rem] text-transparent">
+            <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-[32px]">
               Store Your Assets
             </h3>
-            <BlurTextReveal sentence="To start mining Core Coins, you first need to find a safe place to store them. Core Blockchain utilizes the well-proven ICAN address format, which is like the crypto equivalent of IBAN. There are a couple of ways to store your assets securely and efficiently:" />
+            <BlurTextReveal
+              className="max-lg:text-[15px]"
+              sentence="To start mining Core Coins, you first need to find a safe place to store them. Core Blockchain utilizes the well-proven ICAN address format, which is like the crypto equivalent of IBAN. There are a couple of ways to store your assets securely and efficiently:"
+            />
           </div>
-          <div className="flex flex-row items-stretch gap-[72px]">
+          <div className="flex flex-row items-stretch gap-[72px] max-lg:flex-col max-lg:gap-6">
             <StoreAssetMethod
               icon="/images/store-corepass.png"
               method="corepass"

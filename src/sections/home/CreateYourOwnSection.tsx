@@ -17,19 +17,19 @@ const CircleItem = ({ hasLogo = false }: { hasLogo?: boolean }) => (
 export const CreateYourOwnSection = () => {
   return (
     <>
-      <div className="flex w-full justify-center bg-black py-[100px]">
+      <div className="flex w-full justify-center bg-black py-[100px] max-lg:p-8">
         <div className="flex w-full max-w-[1200px] flex-col items-center gap-16">
           <div className="flex flex-1 flex-col items-center gap-5">
             <SectionTitle title="one standard. unlimited freedom" />
-            <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03rem] text-transparent">
+            <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-[32px]">
               Create Your Own CBC Token
             </h3>
             <BlurTextReveal
-              className="w-[680px] text-center text-lg text-white"
+              className="w-[680px] text-center text-lg text-white max-lg:w-full max-lg:text-[15px]"
               sentence="Core Blockchain also gives you the power to create your own tokens by developing smart contracts on the Core Blockchain and converting real-life assets into CBC Tokens."
             />
             <BlurTextReveal
-              className="w-[680px] text-center text-sm font-regular leading-normal text-white/[50%]"
+              className="w-[680px] text-center text-sm font-regular leading-normal text-white/[50%] max-lg:w-full"
               sentence="CBC is a versatile token standard that allows you to create, split, distribute, and manage real-life assets in a tamper-proof environment. But CBC is not just used for tokenization of real-world assets. It is also a suitable standard for developers who wish to create their own purely digital currencies."
             />
           </div>

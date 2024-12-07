@@ -51,7 +51,7 @@ export default {
         },
       },
       animation: {
-        "scroll-x": "scroll-x 10s linear infinite",
+        "scroll-x": "scroll-x 25s linear infinite",
         pulse: "pulse 3s linear infinite",
       },
     },

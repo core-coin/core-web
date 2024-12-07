@@ -58,7 +58,7 @@ export const Button = ({
       data-size={size}
       data-variant={variant}
     >
-      {children}
+      <span className="relative z-10">{children}</span>
     </Tag>
   );
 };
