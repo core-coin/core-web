@@ -62,7 +62,7 @@ export const BlurTextReveal = ({
       <div
         className={clsx(
           twMerge(
-            "text-lg font-thin leading-normal text-white/[66%]",
+            "text-lg font-regular leading-normal text-white/[66%]",
             className,
           ),
         )}

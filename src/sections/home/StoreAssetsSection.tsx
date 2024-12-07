@@ -23,14 +23,14 @@ const StoreAssetMethod = ({
       <div className="flex flex-col">
         <img src={icon} alt={method} className="size-12" />
         <span className="mt-10">
-          <span className="block text-[13px] font-thin uppercase leading-none tracking-[0.33em] text-white/50">
+          <span className="block text-[13px] font-regular uppercase leading-none tracking-[0.33em] text-white/50">
             {method}
           </span>
-          <span className="mt-2 block text-[32px] font-thin leading-[1.3em] tracking-[-0.03em] max-lg:text-2xl">
+          <span className="mt-2 block text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] max-lg:text-2xl">
             {title}
           </span>
         </span>
-        <p className="my-5 text-sm font-thin leading-normal text-white/50 max-lg:mb-0">
+        <p className="my-5 text-sm font-regular leading-normal text-white/50 max-lg:mb-0">
           {description}
         </p>
       </div>

@@ -59,7 +59,7 @@ const MetricItem = ({ value, title, valueColor, index }: IMetricItemProps) => (
     >
       {value}
     </span>
-    <span className="text-lg font-thin leading-normal text-white/[66%] max-lg:text-[15px]">
+    <span className="text-lg font-regular leading-normal text-white/[66%] max-lg:text-[15px]">
       {title}
     </span>
   </motion.div>
@@ -75,7 +75,7 @@ export const MetricsSection = () => (
             Be the change you want to see in the chain
           </h3>
           <BlurTextReveal
-            className="text-lg font-thin leading-normal text-white/[66%] max-lg:text-[15px]"
+            className="text-lg font-regular leading-normal text-white/[66%] max-lg:text-[15px]"
             sentence="The Core Blockchain allows for the decentralized management of
             physical infrastructures (DePIN), tokenization and digital
             management of real-world assets (RWA), and the optimization of

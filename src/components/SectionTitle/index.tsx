@@ -35,7 +35,7 @@ export const SectionTitle = ({
         className={clsx(
           twMerge(
             variantClasses[variant],
-            "rounded-full px-5 py-3 font-regular uppercase tracking-[0.20rem] text-xxs flex",
+            "rounded-full px-5 py-3 font-bold uppercase tracking-[0.20rem] text-xxs flex",
           ),
         )}
       >

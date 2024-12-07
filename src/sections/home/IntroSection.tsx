@@ -18,7 +18,7 @@ export const IntroSection = () => {
         >
           The Real-World Blockchain
         </h3>
-        <p className="text-lg font-thin leading-6 text-white/[66%] max-lg:text-[15px]">
+        <p className="text-lg font-regular leading-6 text-white/[66%] max-lg:text-[15px]">
           Decentralized, secure, and scalable real-world solutions. A Layer-1
           Proof of Work Blockchain.
         </p>

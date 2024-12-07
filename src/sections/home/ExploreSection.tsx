@@ -33,7 +33,7 @@ const RevealItem = ({
 
 export const ExploreSection = () => (
   <div className="flex w-full justify-center bg-black py-[196px] max-lg:p-6">
-    <div className="relative flex w-full max-w-[1200px] gap-[120px] max-lg:flex-col max-lg:p-2">
+    <div className="relative flex w-full max-w-[1200px] gap-[120px] max-lg:flex-col">
       <div className="sticky top-[200px] flex h-min w-[33%] flex-col items-start gap-14 max-lg:relative max-lg:top-0 max-lg:w-full">
         <div className="flex flex-col items-start gap-5">
           <SectionTitle title="explore" />
@@ -41,7 +41,7 @@ export const ExploreSection = () => (
             The Core Blockchain Ecosystem
           </h3>
           <BlurTextReveal
-            className="text-lg font-thin leading-normal text-white/[66%] max-lg:w-full max-lg:text-[15px]"
+            className="text-lg font-regular leading-normal text-white/[66%] max-lg:w-full max-lg:text-[15px]"
             sentence="From smart buildings, entire city infrastructures, and a wide array of decentralized applications powered by Core Blockchain, our network offers a way to break away from centralization and monitoring and move to a privacy-first, more democratized and transparent future."
           />
         </div>
@@ -65,13 +65,13 @@ export const ExploreSection = () => (
           </div>
           <div className="flex flex-col items-start gap-10 p-8">
             <div className="flex flex-col gap-4">
-              <span className="block text-[13px] font-thin uppercase leading-none tracking-[0.33em] text-white/50">
+              <span className="block text-[13px] font-regular uppercase leading-none tracking-[0.33em] text-white/50">
                 corepass
               </span>
-              <span className="block text-[32px] font-thin leading-[1.3em] tracking-[-0.03em]">
+              <span className="block text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] max-lg:text-2xl">
                 Step Into a Privacy-First Future
               </span>
-              <p className="text-sm font-thin leading-normal text-white/50">
+              <p className="text-sm font-regular leading-normal text-white/50">
                 CorePass is a decentralized digital ID & login app that gives
                 you full control over your personal data, allowing you to choose
                 how you share it and with whom. It is the world&#39;s most
@@ -100,13 +100,13 @@ export const ExploreSection = () => (
           </div>
           <div className="flex flex-col items-start gap-10 p-8">
             <div className="flex flex-col gap-4">
-              <span className="block text-[13px] font-thin uppercase leading-none tracking-[0.33em] text-white/50">
+              <span className="block text-[13px] font-regular uppercase leading-none tracking-[0.33em] text-white/50">
                 ping exchange
               </span>
-              <span className="block text-[32px] font-thin leading-[1.3em] tracking-[-0.03em]">
+              <span className="block text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] max-lg:text-2xl">
                 The Exchange That Lets You Take Control
               </span>
-              <p className="text-sm font-thin leading-normal text-white/50">
+              <p className="text-sm font-regular leading-normal text-white/50">
                 Ping Exchange is a hybrid exchange with an unparalleled
                 utilization of blockchain, a uniquely secure login, an
                 innovative approach to user data. Ping Exchange became the first
@@ -134,13 +134,13 @@ export const ExploreSection = () => (
           </div>
           <div className="flex flex-col items-start gap-10 p-8">
             <div className="flex flex-col gap-4">
-              <span className="block text-[13px] font-thin uppercase leading-none tracking-[0.33em] text-white/50">
+              <span className="block text-[13px] font-regular uppercase leading-none tracking-[0.33em] text-white/50">
                 xcb holder
               </span>
-              <span className="block text-[32px] font-thin leading-[1.3em] tracking-[-0.03em]">
+              <span className="block text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] max-lg:text-2xl">
                 A Wallet Tailored to Your Needs
               </span>
-              <p className="text-sm font-thin leading-normal text-white/50">
+              <p className="text-sm font-regular leading-normal text-white/50">
                 XCB Hodler is a dedicated wallet exclusively designed for Core
                 Coins, providing a simplified and efficient transaction
                 experience tailored to the needs of miners. It ensures air-tight
@@ -159,13 +159,13 @@ export const ExploreSection = () => (
             className="pointer-events-none absolute inset-0 flex justify-end [&>canvas]:!h-min [&>canvas]:!w-full"
           />
           <div className="z-10 flex flex-col items-start p-16">
-            <span className="block text-[13px] font-thin uppercase leading-none tracking-[0.33em] text-white/50">
+            <span className="block text-[13px] font-regular uppercase leading-none tracking-[0.33em] text-white/50">
               contribute to the ecosystem
             </span>
-            <span className="mt-4 block text-[32px] font-thin leading-[1.3em] tracking-[-0.03em]">
+            <span className="mt-4 block text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] max-lg:text-2xl">
               Can’t find anything that interests you?
             </span>
-            <p className="my-8 text-sm font-thin leading-normal text-white/50">
+            <p className="my-8 text-sm font-regular leading-normal text-white/50">
               Core Blockchain fully supports its developers and contributors
               with tutorials, guides, manuals, and a full-fledged dev platform,
               called Foxar.
