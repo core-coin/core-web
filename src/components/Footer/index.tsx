@@ -1,6 +1,6 @@
 export const Footer = () => (
-  <footer className="sticky bottom-0 -z-10 flex h-screen flex-col items-center gap-16 bg-brand py-16 max-lg:h-min max-lg:max-h-screen max-lg:overflow-y-visible max-lg:p-0">
-    <div className="flex size-full max-w-screen-lg flex-col items-center justify-between max-lg:justify-center max-lg:gap-12 max-lg:bg-brand max-lg:p-8 max-lg:pt-20">
+  <footer className="fixed inset-x-0 bottom-0 -z-10 flex h-screen flex-col items-center gap-16 bg-brand py-16 max-lg:h-min max-lg:max-h-screen max-lg:p-0">
+    <div className="flex size-full max-w-screen-lg flex-col items-center justify-between max-lg:h-screen max-lg:justify-start max-lg:gap-12 max-lg:overflow-y-auto max-lg:bg-brand max-lg:p-8 max-lg:pt-20">
       <div className="flex flex-row gap-12 max-lg:flex-col max-lg:gap-6">
         <div className="flex flex-1">
           <img
