@@ -1,11 +1,10 @@
-import Spline from "@splinetool/react-spline";
-import { Button, SectionTitle } from "@src/components";
+import { Button, SectionTitle, SplineLoader } from "@src/components";
 import clsx from "clsx";
 
 export const IntroSection = () => {
   return (
     <section className="flex h-screen w-screen items-center justify-center">
-      <Spline
+      <SplineLoader
         className="pointer-events-none absolute inset-0 opacity-80"
         scene="/models/home-intro.splinecode"
       />

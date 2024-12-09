@@ -6,5 +6,6 @@ export * from "./BlurTextReveal";
 export * from "./Modal";
 export * from "./Footer";
 export * from "./Accordion";
+export * from "./SplineLoader";
 
 export type { ModalRef } from "./Modal";

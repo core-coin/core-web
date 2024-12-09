@@ -1,7 +1,6 @@
-import { BlurTextReveal, SectionTitle } from "@src/components";
+import { BlurTextReveal, SectionTitle, SplineLoader } from "@src/components";
 import clsx from "clsx";
 import type { ReactNode } from "react";
-import Spline from "@splinetool/react-spline";
 
 interface ILeadingFeatureItemProps {
   variant: "primary" | "secondary";
@@ -30,7 +29,7 @@ const LeadingFeatureItem = ({
         "bg-[linear-gradient(135deg,#121212 0%,rgba(0,0,0,.85) 52.702702702702695%,rgba(0,0,0,.65) 100%)] relative flex h-[480px] overflow-hidden rounded-3xl border border-white/10 backdrop-blur-xl max-lg:h-[400px] max-lg:w-full max-lg:flex-none",
       )}
     >
-      <Spline
+      <SplineLoader
         className="pointer-events-none absolute inset-0 flex items-center justify-end max-lg:flex [&>canvas]:!h-full [&>canvas]:!w-full [&>canvas]:object-cover"
         scene={bg}
       />

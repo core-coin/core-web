@@ -2,13 +2,12 @@ import {
   BlurTextReveal,
   Button,
   type ModalRef,
-  SectionTitle,
+  SectionTitle, SplineLoader,
 } from "@src/components";
 import { useTransform, motion, type MotionValue } from "framer-motion";
 import { Plus } from "@phosphor-icons/react";
 import { useRef } from "react";
 import Modal from "@src/components/Modal";
-import Spline from "@splinetool/react-spline";
 
 const trilemmaModalContent = {
   scalability: {
@@ -98,7 +97,7 @@ const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
   return (
     <>
       <div className="relative flex h-[402px] flex-1 rounded-2xl border border-white/[10%] backdrop-blur-lg max-lg:w-full max-lg:flex-none">
-        <Spline
+        <SplineLoader
           className="pointer-events-none absolute inset-0 max-lg:flex max-lg:justify-center"
           scene={`/models/${name}.splinecode`}
         />
