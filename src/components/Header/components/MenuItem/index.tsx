@@ -51,7 +51,7 @@ export const MenuItem = ({ title, megaMenu }: IMenuItemProps) => {
       <li
         className={clsx(
           styles["menu-item"],
-          "group relative inline-flex cursor-pointer items-center gap-1 px-8 py-4 text-sm font-medium",
+          "group relative inline-flex cursor-pointer items-center gap-1 px-8 py-4 text-sm font-bold",
         )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -78,7 +78,7 @@ export const MenuItem = ({ title, megaMenu }: IMenuItemProps) => {
         </span>
         <CaretDown
           size={16}
-          className="box-content fill-gray-888 p-1 transition-all duration-400 ease-cubic-menu group-hover:-rotate-180 group-hover:fill-brand"
+          className="box-content fill-gray-888 p-[3px] transition-all duration-400 ease-cubic-menu group-hover:-rotate-180 group-hover:fill-brand"
         />
       </li>
 
