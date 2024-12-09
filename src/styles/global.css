@@ -10,3 +10,7 @@ body {
   color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
 }
+
+html, body {
+  overflow-x: hidden;
+}
