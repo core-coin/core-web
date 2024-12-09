@@ -30,7 +30,7 @@ const EcosystemCard = ({
   description: string;
   link: string;
 }) => (
-  <div className="flex flex-col gap-12 rounded-2xl border border-white/10 p-12 backdrop-blur-lg">
+  <div className="flex flex-col gap-12 rounded-2xl border border-white/10 p-12 backdrop-blur-lg max-lg:p-8">
     <div className="flex items-start justify-between">
       <img src={logo} alt={title} className="size-16" />
       <span className="rounded-full border border-white/20 bg-white/0 px-3 py-2 text-[9px] font-medium uppercase leading-none tracking-[0.25em] text-white/50 transition-all">
@@ -42,7 +42,7 @@ const EcosystemCard = ({
         className="text-[26px] font-regular leading-[1.4em] tracking-[-0.04em] text-white"
         sentence={title}
       />
-      <div className="flex flex-row items-end gap-8">
+      <div className="flex flex-row items-end gap-8 max-lg:flex-col max-lg:items-start">
         <BlurTextReveal
           className="flex-1 text-sm font-regular leading-normal text-white/50"
           sentence={description}
@@ -101,7 +101,7 @@ export const ExploreSection = () => {
           </p>
         </div>
         <div className="flex w-full flex-col flex-wrap gap-10 p-16 max-lg:p-0">
-          <div className="mx-auto flex w-[70%] flex-wrap justify-center gap-4">
+          <div className="mx-auto flex w-[70%] flex-wrap justify-center gap-4 max-lg:hidden">
             {CATEGORIES.map((category) => (
               <CategoryItem
                 key={category}
@@ -119,7 +119,7 @@ export const ExploreSection = () => {
               transition={{ duration: 0.2 }}
               key={`ecosystem-wrapper-${selectedCategory}`}
             >
-              <div className="grid grid-cols-2 flex-wrap gap-8">
+              <div className="grid grid-cols-2 flex-wrap gap-8 max-lg:grid-cols-1">
                 {filteredEcosystemItems.map((ecosystemItem) => (
                   <EcosystemCard
                     key={ecosystemItem.title}
@@ -148,7 +148,7 @@ export const ExploreSection = () => {
               contribute to the future
             </span>
           </div>
-          <h6 className="text-center text-[56px] font-thin leading-[1.2em] tracking-[-0.03em]">
+          <h6 className="text-center text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] max-lg:text-[32px]">
             You, too, can contribute to the future of the Core Blockchain by
             developing projects using our developer platform
           </h6>
