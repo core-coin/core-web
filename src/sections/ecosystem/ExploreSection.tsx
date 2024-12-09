@@ -30,10 +30,10 @@ const EcosystemCard = ({
   description: string;
   link: string;
 }) => (
-  <div className="flex flex-col gap-12 rounded-2xl border border-white/10 p-12 backdrop-blur-lg max-lg:p-8">
+  <div className="group flex flex-col gap-12 rounded-2xl border border-white/10 p-12 backdrop-blur-lg max-lg:p-8 cursor-pointer">
     <div className="flex items-start justify-between">
       <img src={logo} alt={title} className="size-16" />
-      <span className="rounded-full border border-white/20 bg-white/0 px-3 py-2 text-[9px] font-medium uppercase leading-none tracking-[0.25em] text-white/50 transition-all">
+      <span className="rounded-full border border-white/20 bg-white/0 px-3 py-2 text-[9px] font-medium uppercase leading-none tracking-[0.25em] text-white/50 transition-all group-hover:bg-white/15 group-hover:text-white">
         {category}
       </span>
     </div>
@@ -100,7 +100,7 @@ export const ExploreSection = () => {
             So, what can you try out and what’s still in the oven?
           </p>
         </div>
-        <div className="flex w-full flex-col flex-wrap gap-10 p-16 max-lg:p-0">
+        <div className="flex w-full flex-col flex-wrap gap-10 px-16 max-lg:p-0">
           <div className="mx-auto flex w-[70%] flex-wrap justify-center gap-4 max-lg:hidden">
             {CATEGORIES.map((category) => (
               <CategoryItem
