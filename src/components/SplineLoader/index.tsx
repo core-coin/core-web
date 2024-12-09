@@ -9,12 +9,6 @@ interface ISplineLoaderProps {
 
 export const SplineLoader = ({ scene, className }: ISplineLoaderProps) => (
   <Suspense fallback={<div>Loading...</div>}>
-    <Spline
-      scene={scene}
-      className={className}
-      onLoad={(app) => {
-        console.log(app);
-      }}
-    />
+    <Spline scene={scene} className={className} />
   </Suspense>
 );
