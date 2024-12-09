@@ -31,7 +31,7 @@ const LeadingFeatureItem = ({
       )}
     >
       <Spline
-        className="pointer-events-none absolute inset-0 max-lg:flex max-lg:items-center max-lg:justify-end max-lg:[&>canvas]:!h-min max-lg:[&>canvas]:!w-full"
+        className="pointer-events-none absolute inset-0 flex items-center justify-end max-lg:flex [&>canvas]:!h-full [&>canvas]:!w-full [&>canvas]:object-cover"
         scene={bg}
       />
       <div className="absolute bottom-14 left-14 flex w-[55%] flex-col gap-5 max-lg:inset-x-8 max-lg:w-auto max-lg:gap-3">
@@ -60,7 +60,7 @@ export const LeadingFeaturesSection = () => {
             What Makes Core Blockchain <br /> the Leading Real-World Blockchain?
           </h3>
         </div>
-        <div className="mx-auto flex max-w-[1200px] flex-col flex-wrap gap-2 p-8 max-lg:p-0">
+        <div className="mx-auto flex max-w-[1200px] flex-col flex-wrap gap-2 py-8 max-lg:p-0">
           <div className="flex gap-2 max-lg:flex-wrap">
             <LeadingFeatureItem
               variant="primary"

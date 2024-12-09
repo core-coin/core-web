@@ -1,5 +1,6 @@
 import { Button, SectionTitle } from "@src/components";
 import { motion } from "framer-motion";
+import { Fragment } from "react";
 
 interface INetworkItemProps {
   icon: string;
@@ -58,9 +59,8 @@ export const NetworksSection = () => (
       </div>
       <motion.div className="flex flex-1 flex-col items-start gap-16">
         {networksData.map((networkItem, index) => (
-          <>
+          <Fragment key={networkItem.title}>
             <NetworkItem
-              key={networkItem.title}
               icon={networkItem.icon}
               title={networkItem.title}
               description={networkItem.description}
@@ -68,7 +68,7 @@ export const NetworksSection = () => (
             {index < networksData.length - 1 && (
               <span className="h-px w-full bg-white/10" />
             )}
-          </>
+          </Fragment>
         ))}
       </motion.div>
     </div>
