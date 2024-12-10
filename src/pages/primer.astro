@@ -1,0 +1,18 @@
+---
+import MainLayout from "@src/layouts/MainLayout.astro";
+import {
+  IntroSection,
+  DataRecordsSection,
+  BlockchainTrilemmaSection,
+  ParticipationRewardsSection,
+} from "@src/sections/primer";
+---
+
+<MainLayout>
+  <div class="bg-black">
+    <IntroSection client:load />
+    <DataRecordsSection client:load />
+    <BlockchainTrilemmaSection client:load />
+    <ParticipationRewardsSection client:load />
+  </div>
+</MainLayout>

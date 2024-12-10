@@ -1,0 +1,38 @@
+.core-left {
+  animation: coreLeftAnimation 5s infinite ease-in-out alternate;
+}
+
+.core-right {
+  animation: coreRightAnimation 5s infinite ease-in-out alternate;
+}
+
+.glowing-icon {
+  animation: iconGlowingAnimation 1s infinite ease-in-out alternate;
+}
+
+@keyframes coreLeftAnimation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(5px) translateY(20px);
+  }
+}
+
+@keyframes coreRightAnimation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-5px) translateY(-10px);
+  }
+}
+
+@keyframes iconGlowingAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
