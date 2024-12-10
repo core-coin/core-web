@@ -5,13 +5,13 @@ import {
   SectionTitle,
   SplineLoader,
 } from "@src/components";
-import { useTransform, motion, type MotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import { Plus } from "@phosphor-icons/react";
-import { useRef } from "react";
+import { type KeyboardEvent, useRef } from "react";
 import Modal from "@src/components/Modal";
 
-const trilemmaModalContent = {
-  scalability: {
+const advantagesModalContent = {
+  pow: {
     title: "Scalability",
     subtitle:
       "Core Blockchain’s modular architecture is designed with scalability at its heart, addressing the blockchain trilemma by allowing the network to grow without being bogged down by congestion.",
@@ -36,7 +36,7 @@ const trilemmaModalContent = {
       </>
     ),
   },
-  decentralization: {
+  pode: {
     title: "Decentralization",
     subtitle:
       "Decentralization is a cornerstone of Core Blockchain’s infrastructure. Core Blockchain brings an inclusive model that relies on a global network of nodes running on IoT devices and mobile hardware.",
@@ -79,30 +79,66 @@ const trilemmaModalContent = {
       </>
     ),
   },
+  depin: {
+    title: "Security",
+    subtitle:
+      "Security is foundational to Core Blockchain’s infrastructure, as it adopts the advanced ED448-Goldilocks encryption method, offering an elevated security level unmatched by conventional cryptographic algorithms like ECDSA, which are widely used in legacy blockchains such as Bitcoin and Ethereum, but also in more modern blockchains as well.",
+    description: (
+      <>
+        With its 448-bit key length, ED448 provides far greater resistance to
+        cryptographic attacks than ECDSA’s 256-bit key, ensuring a more potent
+        defense against potential threats. Additionally, the modern elliptic
+        curve of ED448 not only enables faster verification but also has an
+        inherent design advantage against side-channel attacks. <br />
+        <br />
+        This sophisticated encryption approach strengthens Core Blockchain’s
+        resilience without compromising scalability or decentralization,
+        reinforcing a secure, decentralized framework that minimizes the risks
+        of manipulation and ensures trust at every layer.
+      </>
+    ),
+  },
 };
 
-interface ITrilemmaItemProps {
-  name: "scalability" | "decentralization" | "security";
+interface IAdvantagesItemProps {
+  name: "pow" | "pode" | "security" | "depin";
+  scene: string;
   title: string;
   description: string;
 }
 
-interface IBlockchainTrilemmaSectionProps {
-  scrollYProgress: MotionValue<number>;
-}
-
-const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
+const AdvantagesItem = ({
+  name,
+  title,
+  scene,
+  description,
+}: IAdvantagesItemProps) => {
   const modalRef = useRef<ModalRef>(null);
-  const modalContent = trilemmaModalContent[name];
+  const modalContent = advantagesModalContent[name];
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      modalRef?.current?.open();
+    }
+  };
 
   return (
     <>
-      <div className="relative flex h-[402px] flex-1 rounded-2xl border border-white/[10%] backdrop-blur-lg max-lg:w-full max-lg:flex-none">
+      <div
+        className="relative flex h-[500px] flex-1 cursor-pointer rounded-2xl border border-white/[10%] backdrop-blur-lg max-lg:w-full max-lg:flex-none"
+        role="button"
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+        onClick={() => {
+          modalRef?.current?.open();
+        }}
+      >
         <SplineLoader
-          className="pointer-events-none absolute inset-0 max-lg:flex max-lg:justify-center"
-          scene={`/models/${name}.splinecode`}
+          className="pointer-events-none absolute inset-0 max-lg:flex max-lg:justify-center [&>canvas]:aspect-square [&>canvas]:!h-auto [&>canvas]:!w-full"
+          scene={scene}
         />
-        <div className="absolute inset-x-0 bottom-0 flex flex-row gap-10 p-8">
+        <div className="absolute inset-x-0 bottom-0 flex flex-col gap-10 p-[30px]">
           <div className="flex flex-col gap-4 max-lg:flex-1">
             <span className="text-[26px] font-regular leading-[1.4em] tracking-[-0.04em]">
               {title}
@@ -137,54 +173,52 @@ const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
         </p>
         <SplineLoader
           className="pointer-events-none absolute inset-0 mx-auto !w-[90%] max-lg:flex max-lg:justify-center [&>canvas]:aspect-square [&>canvas]:!h-auto [&>canvas]:!w-full"
-          scene={`/models/${name}.splinecode`}
+          scene={scene}
         />
       </Modal>
     </>
   );
 };
 
-export const BlockchainTrilemmaSection = ({
-  scrollYProgress,
-}: IBlockchainTrilemmaSectionProps) => {
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
-
+export const CoreAdvantages = () => {
   return (
     <>
-      <motion.div
-        className="sticky top-20 flex w-full justify-center bg-black py-[100px] max-lg:relative max-lg:p-4 max-lg:pb-20"
-        style={{ scale, opacity }}
-      >
+      <motion.div className="sticky top-20 flex w-full justify-center bg-black py-[100px] max-lg:relative max-lg:p-4 max-lg:pb-20">
         <div className="flex w-full max-w-[1200px] flex-col gap-16">
           <div className="flex flex-1 flex-col items-center gap-5 max-lg:p-6">
-            <SectionTitle title="ACHIEVING PERFECT BALANCE" />
+            <SectionTitle title="core blockchain" />
             <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-[32px]">
-              The Blockchain Trilemma
+              Accessible to everyone, everywhere
             </h3>
             <BlurTextReveal
               className="w-[900px] text-center leading-normal max-lg:text-[15px]"
-              sentence="The blockchain trilemma is the challenge of achieving
-          decentralization, scalability, and security simultaneously, often
-          requiring a compromise in one area to optimize the others. How does
-          Core Blockchain achieve this?"
+              sentence="Those are all just pretty words until you understand what makes it so"
             />
           </div>
           <div className="flex flex-row items-center gap-4 max-lg:flex-col">
-            <TrilemmaItem
-              name="scalability"
-              title="Scalability"
-              description="Core Blockchain quickly distributes ledger information globally, even on internetless networks."
+            <AdvantagesItem
+              name="pow"
+              title="Proof of Work – Why is it important?"
+              description="Though many blockchains have moved to a more energy-efficient proof-of-stake system."
+              scene="/models/scalability.splinecode"
             />
-            <TrilemmaItem
-              name="decentralization"
-              title="Decentralization"
-              description="An improved PoW mechanism, called PoDE ensures true decentralization."
+            <AdvantagesItem
+              name="pode"
+              title="Efficiency and eco-friendly mining"
+              description="Core Blockchain developed an improved algorithm called “Proof-of-Distributed-Efficiency.”"
+              scene="/models/security.splinecode"
             />
-            <TrilemmaItem
+            <AdvantagesItem
               name="security"
-              title="Security"
-              description="The first blockchain to use the advanced ”Goldilocks” ED448 encryption method."
+              title="Unmatched encrypted Security"
+              description="The most common type of encryption in blockchain technology is public-key cryptography"
+              scene="/models/decentralization.splinecode"
+            />
+            <AdvantagesItem
+              name="depin"
+              title="DePIN & RWA Solutions"
+              description="A Decentralized Physical Infrastructure Network (DePIN) is an innovative approach."
+              scene="/models/security.splinecode"
             />
           </div>
         </div>
