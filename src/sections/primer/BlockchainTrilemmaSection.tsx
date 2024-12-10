@@ -141,15 +141,15 @@ const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
 
 export const BlockchainTrilemmaSection = () => {
   return (
-    <section className="mt-16 flex w-screen items-center justify-center max-lg:h-auto max-lg:items-start max-lg:py-16">
+    <section className="mt-16 flex w-screen items-center justify-center max-lg:mt-0 max-lg:h-auto max-lg:items-start max-lg:py-16">
       <div className="relative z-10 mx-auto flex size-full w-[1000px] max-w-screen-lg flex-col items-center justify-start gap-16 max-lg:h-auto max-lg:flex-row max-lg:flex-wrap max-lg:gap-0">
         <div className="flex w-full flex-col gap-8">
           <div className="flex flex-1 flex-col items-center gap-5 max-lg:p-6">
-            <h3 className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-center text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent">
+            <h3 className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-center text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent max-lg:text-2xl">
               The Blockchain Trilemma
             </h3>
             <BlurTextReveal
-              className="w-[900px] text-center text-[18px] font-regular leading-normal text-white/[66%] max-lg:text-[15px]"
+              className="w-[900px] text-center text-[18px] font-regular leading-normal text-white/[66%] max-lg:w-full max-lg:text-[15px]"
               sentence="You might be wondering – what is the blockchain trilemma? In short, the blockchain trilemma is the challenge of achieving decentralization, scalability, and security simultaneously, often requiring a compromise in one area to optimize the others."
             />
           </div>
@@ -172,10 +172,10 @@ export const BlockchainTrilemmaSection = () => {
           </div>
         </div>
         <div className="flex w-full flex-col gap-8 p-16">
-          <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent">
+          <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent max-lg:text-2xl">
             So, who is it for?
           </span>
-          <p className="text-[18px] font-regular leading-normal tracking-normal text-white">
+          <p className="text-[18px] font-regular leading-normal tracking-normal text-white max-lg:text-sm">
             Core Blockchain is meant to be used by people from all walks of
             life. Whether you’re a developer looking to make the next big DApp,
             a miner looking to put your computer to work, a cryptocurrency

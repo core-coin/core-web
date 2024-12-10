@@ -18,7 +18,7 @@ export const ParticipationRewardsSection = () => (
               alt=""
             />
           </div>
-          <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-[32px]">
+          <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-center max-lg:text-[32px]">
             Participation rewards - Core Coins
           </h3>
         </div>
@@ -29,7 +29,7 @@ export const ParticipationRewardsSection = () => (
           This facilitation of services creates a natural demand for the coin.
           So, as the ecosystem grows and expands, so does the value of the coin.
         </p>
-        <div className="flex flex-row gap-6">
+        <div className="flex flex-row gap-6 max-lg:flex-col max-lg:items-center">
           <Button as="a" href="/" size="sm" className="px-8 py-3">
             Start mining
           </Button>
@@ -44,7 +44,7 @@ export const ParticipationRewardsSection = () => (
           </Button>
         </div>
         <div className="flex flex-col items-center gap-4">
-          <p className="text-[18px] font-regular leading-normal tracking-normal text-white">
+          <p className="text-[18px] font-regular leading-normal tracking-normal text-white max-lg:text-sm">
             Be the change you want to see in the world
           </p>
           <p className="w-[600px] text-center text-sm font-regular leading-normal tracking-normal text-white/[66%] max-lg:w-full">

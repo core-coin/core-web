@@ -1,15 +1,15 @@
 export const DataRecordsSection = () => (
-  <section className="mt-16 flex w-screen items-center justify-center max-lg:h-auto max-lg:items-start max-lg:py-16">
+  <section className="mt-16 flex w-screen items-center justify-center max-lg:mt-0 max-lg:h-auto max-lg:items-start max-lg:py-0">
     <div className="relative z-10 mx-auto flex size-full w-[1000px] max-w-screen-lg flex-col items-center justify-start gap-16 max-lg:h-auto max-lg:flex-row max-lg:flex-wrap max-lg:gap-0">
       <div className="flex w-full max-w-[1200px] flex-col items-center rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.1)_0%,rgba(0,0,0,0)_100%)] p-16 max-lg:p-6">
-        <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-center text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent">
+        <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-center text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent max-lg:text-2xl">
           26 billion of your data records. Just like that.
         </span>
-        <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-center text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent">
+        <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-center text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent max-lg:text-2xl">
           So, how can Core Blockchain prevent this from happening in the future?
         </span>
       </div>
-      <div className="flex flex-col gap-16 p-16">
+      <div className="flex flex-col gap-16 p-16 max-lg:mt-16">
         <div>
           <p className="text-sm font-regular leading-normal tracking-normal text-white/[66%]">
             Core Blockchain is a completely decentralized software solution that
@@ -28,10 +28,10 @@ export const DataRecordsSection = () => (
           </p>
         </div>
         <div className="flex flex-col items-start gap-8">
-          <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-center text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent">
+          <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent max-lg:text-2xl">
             How does this ecosystem work?
           </span>
-          <p className="text-[18px] font-regular leading-normal tracking-normal text-white">
+          <p className="text-[18px] font-regular leading-normal tracking-normal text-white max-lg:text-sm">
             Blockchains are essentially databases made up of individual blocks
             carrying information. These blocks are arranged in a line, like a
             chain, and the information inside them is secured by
@@ -52,10 +52,10 @@ export const DataRecordsSection = () => (
           </p>
         </div>
         <div className="flex flex-col items-start gap-8">
-          <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-center text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent">
+          <span className="bg-[linear-gradient(135deg,rgb(255,255,255)_0%,rgba(255,255,255,0.5)_100%)] bg-clip-text text-[32px] font-regular leading-[1.3em] tracking-[-0.03em] text-transparent max-lg:text-2xl">
             What makes Core Blockchain special?
           </span>
-          <p className="text-[18px] font-regular leading-normal tracking-normal text-white">
+          <p className="text-[18px] font-regular leading-normal tracking-normal text-white max-lg:text-sm">
             Many successful Blockchains, such as Bitcoin or Ethereum, already
             exist. So, what makes ours any different?
           </p>

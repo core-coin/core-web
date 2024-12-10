@@ -9,7 +9,7 @@ export const IntroSection = () => (
         <img
           className={clsx(
             styles["core-left"],
-            "absolute left-[130px] top-1/2 z-10 w-[95px] will-change-transform max-lg:relative max-lg:left-0 max-lg:h-max max-lg:w-[143px]",
+            "absolute left-[130px] top-1/2 z-10 w-[95px] will-change-transform max-lg:relative max-lg:left-[-80px] max-lg:h-max max-lg:w-[143px]",
           )}
           src="/images/ecosystem/core-left.png"
           alt=""
@@ -17,13 +17,13 @@ export const IntroSection = () => (
         <img
           className={clsx(
             styles["core-right"],
-            "absolute bottom-0 left-0 z-10 w-[209px] will-change-transform max-lg:relative max-lg:right-0 max-lg:h-max max-lg:w-[71px]",
+            "absolute bottom-0 left-0 z-10 w-[209px] will-change-transform max-lg:relative max-lg:bottom-[-30px] max-lg:left-[130px] max-lg:h-max max-lg:w-[71px]",
           )}
           src="/images/ecosystem/core-right.png"
           alt=""
         />
       </div>
-      <div className="box-content flex w-full flex-col items-center gap-8 p-16 max-lg:w-full max-lg:items-center max-lg:p-8">
+      <div className="box-content flex w-full flex-col items-center gap-8 p-16 max-lg:mt-8 max-lg:w-full max-lg:items-center max-lg:p-0">
         <SectionTitle title="intro" />
         <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[80px] font-thin leading-[1.2em] -tracking-wider text-transparent max-lg:text-center max-lg:text-[32px]">
           10-minute primer
