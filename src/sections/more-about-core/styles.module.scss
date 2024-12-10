@@ -1,0 +1,41 @@
+.core-left {
+  animation: coreLeftAnimation 5s infinite ease-in-out alternate;
+}
+
+.core-right {
+  animation: coreRightAnimation 5s infinite ease-in-out alternate;
+}
+
+.glowing-text {
+  text-shadow: 0 0 5px white;
+  mask-image: linear-gradient(to right, transparent 30%, #EEE 50%, transparent 70%);
+  mask-size: 150% auto;
+  animation: textGlowingAnimation 5s ease-in-out infinite;
+}
+
+@keyframes coreLeftAnimation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(5px) translateY(20px);
+  }
+}
+
+@keyframes coreRightAnimation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-5px) translateY(-10px);
+  }
+}
+
+@keyframes textGlowingAnimation {
+  0% {
+    mask-position: 200%;
+  }
+  100% {
+    mask-position: -100% center;
+  }
+}

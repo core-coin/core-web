@@ -3,14 +3,12 @@ import MainLayout from "@src/layouts/MainLayout.astro";
 import { FixedBottomGradient } from "@src/components";
 import {
   IntroSection,
-  ExploreSection,
-} from "@src/sections/ecosystem";
+} from "@src/sections/more-about-core";
 ---
 
 <MainLayout>
   <div class="bg-black">
     <IntroSection client:load />
-    <ExploreSection client:load />
     <FixedBottomGradient client:load />
   </div>
 </MainLayout>

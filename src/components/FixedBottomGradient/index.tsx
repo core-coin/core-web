@@ -2,7 +2,7 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import clsx from "clsx";
 
-export const GradientBG = () => {
+export const FixedBottomGradient = () => {
   const { scrollYProgress } = useScroll();
   const [isFooterReached, setIsFooterReached] = useState<boolean>(false);
 
