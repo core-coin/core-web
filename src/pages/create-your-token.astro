@@ -1,0 +1,18 @@
+---
+import MainLayout from "@src/layouts/MainLayout.astro";
+import { FixedBottomGradient } from "@src/components";
+import {
+  IntroSection,
+  ParticipationRewardsSection,
+  TechnicalDetailsSection,
+} from "@src/sections/create-your-token";
+---
+
+<MainLayout>
+  <div class="bg-black">
+    <IntroSection client:load />
+    <TechnicalDetailsSection client:load />
+    <ParticipationRewardsSection client:load />
+    <FixedBottomGradient client:load />
+  </div>
+</MainLayout>
