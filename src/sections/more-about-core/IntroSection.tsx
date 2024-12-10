@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 export const IntroSection = () => (
   <section className="flex h-screen w-screen items-center justify-center max-lg:h-auto max-lg:items-start max-lg:py-16">
-    <div className="relative z-10 flex size-full max-w-screen-lg flex-col items-end justify-center gap-6 max-lg:h-auto max-lg:flex-row max-lg:flex-wrap-reverse max-lg:gap-0">
+    <div className="relative z-10 flex size-full max-w-screen-lg flex-col items-end justify-center gap-6 max-lg:h-auto max-lg:flex-row max-lg:flex-wrap max-lg:gap-0">
       <div className="absolute left-0 h-full w-1/2 max-lg:relative max-lg:flex max-lg:h-auto max-lg:w-full max-lg:flex-row-reverse max-lg:items-end max-lg:justify-center">
         <img
           className={clsx(

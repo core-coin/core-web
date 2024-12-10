@@ -6,11 +6,8 @@
   animation: coreRightAnimation 5s infinite ease-in-out alternate;
 }
 
-.glowing-text {
-  text-shadow: 0 0 5px white;
-  mask-image: linear-gradient(to right, transparent 30%, #EEE 50%, transparent 70%);
-  mask-size: 150% auto;
-  animation: textGlowingAnimation 5s ease-in-out infinite;
+.glowing-icon {
+  animation: iconGlowingAnimation 1s infinite ease-in-out alternate;
 }
 
 @keyframes coreLeftAnimation {
@@ -31,11 +28,11 @@
   }
 }
 
-@keyframes textGlowingAnimation {
+@keyframes iconGlowingAnimation {
   0% {
-    mask-position: 200%;
+    opacity: 0;
   }
   100% {
-    mask-position: -100% center;
+    opacity: 1;
   }
 }

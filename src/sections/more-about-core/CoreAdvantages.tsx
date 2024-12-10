@@ -5,7 +5,6 @@ import {
   SectionTitle,
   SplineLoader,
 } from "@src/components";
-import { motion } from "framer-motion";
 import { Plus } from "@phosphor-icons/react";
 import { type KeyboardEvent, useRef } from "react";
 import Modal from "@src/components/Modal";
@@ -183,7 +182,7 @@ const AdvantagesItem = ({
 export const CoreAdvantages = () => {
   return (
     <>
-      <motion.div className="sticky top-20 flex w-full justify-center bg-black py-[100px] max-lg:relative max-lg:p-4 max-lg:pb-20">
+      <div className="flex w-full justify-center bg-black py-[100px] max-lg:relative max-lg:p-4 max-lg:pb-20">
         <div className="flex w-full max-w-[1200px] flex-col gap-16">
           <div className="flex flex-1 flex-col items-center gap-5 max-lg:p-6">
             <SectionTitle title="core blockchain" />
@@ -222,7 +221,7 @@ export const CoreAdvantages = () => {
             />
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };
