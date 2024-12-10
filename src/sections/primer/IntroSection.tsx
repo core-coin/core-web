@@ -1,5 +1,6 @@
 import { SectionTitle } from "@src/components";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import styles from "./styles.module.scss";
 
 export const IntroSection = () => (
@@ -24,7 +25,14 @@ export const IntroSection = () => (
         />
       </div>
       <div className="box-content flex w-full flex-col items-center gap-8 p-16 max-lg:mt-8 max-lg:w-full max-lg:items-center max-lg:p-0">
-        <SectionTitle title="intro" />
+        <motion.div
+          initial={{ y: 10, scale: 0.8, opacity: 0 }}
+          whileInView={{ y: 0, scale: 1, opacity: 1 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
+          viewport={{ amount: 0.8 }}
+        >
+          <SectionTitle title="intro" />
+        </motion.div>
         <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[80px] font-thin leading-[1.2em] -tracking-wider text-transparent max-lg:text-center max-lg:text-[32px]">
           10-minute primer
         </h3>
