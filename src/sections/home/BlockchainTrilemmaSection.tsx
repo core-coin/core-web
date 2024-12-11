@@ -159,11 +159,11 @@ export const BlockchainTrilemmaSection = ({
         <div className="flex w-full max-w-[1200px] flex-col gap-16">
           <div className="flex flex-1 flex-col items-center gap-5 max-lg:p-6">
             <SectionTitle title="ACHIEVING PERFECT BALANCE" />
-            <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-[32px]">
+            <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-center max-lg:text-[32px]">
               The Blockchain Trilemma
             </h3>
             <BlurTextReveal
-              className="w-[900px] text-center leading-normal max-lg:text-[15px]"
+              className="w-[900px] text-center leading-normal max-lg:w-full max-lg:text-[15px]"
               sentence="The blockchain trilemma is the challenge of achieving
           decentralization, scalability, and security simultaneously, often
           requiring a compromise in one area to optimize the others. How does

@@ -21,7 +21,7 @@ export const CreateYourOwnSection = () => {
         <div className="flex w-full max-w-[1200px] flex-col items-center gap-16">
           <div className="flex flex-1 flex-col items-center gap-5">
             <SectionTitle title="one standard. unlimited freedom" />
-            <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-[32px]">
+            <h3 className="bg-[linear-gradient(135deg,_rgba(255,255,255,1)_0%,_rgba(255,255,255,0.5)_100%)] bg-clip-text text-left text-[56px] font-thin leading-[1.2em] tracking-[-0.03em] text-transparent max-lg:text-center max-lg:text-[32px]">
               Create Your Own CBC Token
             </h3>
             <BlurTextReveal

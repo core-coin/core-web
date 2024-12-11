@@ -8,16 +8,16 @@ export const IntroSection = () => {
         className="pointer-events-none absolute inset-0 opacity-80"
         scene="/models/home-intro.splinecode"
       />
-      <div className="z-10 flex w-full max-w-screen-lg flex-col items-center justify-center gap-6">
+      <div className="z-10 flex w-full max-w-screen-lg flex-col items-center justify-center gap-6 max-lg:p-8">
         <SectionTitle title="core blockchain" variant="secondary" />
         <h3
           className={clsx(
-            "text-[80px] font-thin leading-[1.2] -tracking-wider text-white max-lg:text-[32px]",
+            "text-[80px] font-thin leading-[1.2] -tracking-wider text-white max-lg:text-center max-lg:text-[32px]",
           )}
         >
           The Real-World Blockchain
         </h3>
-        <p className="text-lg font-regular leading-6 text-white/[66%] max-lg:text-[15px]">
+        <p className="text-lg font-regular leading-6 text-white/[66%] max-lg:text-center max-lg:text-[15px]">
           Decentralized, secure, and scalable real-world solutions. A Layer-1
           Proof of Work Blockchain.
         </p>

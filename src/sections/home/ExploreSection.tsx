@@ -1,4 +1,9 @@
-import {BlurTextReveal, Button, SectionTitle, SplineLoader} from "@src/components";
+import {
+  BlurTextReveal,
+  Button,
+  SectionTitle,
+  SplineLoader,
+} from "@src/components";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { type ReactNode, useRef } from "react";
 
@@ -50,11 +55,11 @@ export const ExploreSection = () => (
       </div>
       <motion.div className="flex flex-1 flex-col items-start gap-[120px]">
         <RevealItem className="flex w-full flex-col gap-4">
-          <div className="relative h-[500px] w-full rounded-2xl bg-[linear-gradient(225deg,#252933_0%,rgb(26,26,26)_66.66655669341216%,rgb(18,18,18)_100%)]">
+          <div className="relative h-[500px] max-h-[360px] w-full rounded-2xl bg-[linear-gradient(225deg,#252933_0%,rgb(26,26,26)_66.66655669341216%,rgb(18,18,18)_100%)]">
             <img
               src="/images/corepass.avif"
               alt="CorePass"
-              className="absolute bottom-0 left-1/2 w-[90%] -translate-x-1/2 max-lg:w-1/2"
+              className="absolute bottom-0 left-1/2 w-[90%] -translate-x-1/2 max-lg:w-full max-lg:scale-110"
             />
             <img
               src="/images/corepass-logo.svg"
@@ -85,11 +90,11 @@ export const ExploreSection = () => (
           </div>
         </RevealItem>
         <RevealItem className="flex w-full flex-col gap-4">
-          <div className="relative h-[500px] w-full rounded-2xl bg-[linear-gradient(225deg,#ffffff_0%,rgb(64,76,222)_34.23434420748874%,rgb(17,19,38)_100%)]">
+          <div className="relative h-[500px] max-h-[360px] w-full rounded-2xl bg-[linear-gradient(225deg,#ffffff_0%,rgb(64,76,222)_34.23434420748874%,rgb(17,19,38)_100%)]">
             <img
               src="/images/ping-exchange.avif"
               alt="Ping Exchange"
-              className="absolute bottom-4 left-1/2 w-full -translate-x-1/2 scale-[1.07] max-lg:w-[65%]"
+              className="absolute bottom-4 left-1/2 w-full -translate-x-1/2 scale-125 max-lg:bottom-14 max-lg:w-full"
             />
             <img
               src="/images/ping-logo.svg"
@@ -119,11 +124,11 @@ export const ExploreSection = () => (
           </div>
         </RevealItem>
         <RevealItem className="flex w-full flex-col gap-4">
-          <div className="relative h-[500px] w-full rounded-2xl bg-[linear-gradient(225deg,#54db1f_0%,rgb(107,176,90)_22.7026587134009%,rgb(20,20,20)_100%)]">
+          <div className="relative h-[500px] max-h-[360px] w-full rounded-2xl bg-[linear-gradient(225deg,#54db1f_0%,rgb(107,176,90)_22.7026587134009%,rgb(20,20,20)_100%)]">
             <img
               src="/images/xcb-holder.avif"
               alt="XCB Holder"
-              className="absolute bottom-0 left-1/2 w-[90%] translate-x-[-46%] max-lg:w-3/5"
+              className="absolute bottom-0 left-1/2 w-[90%] translate-x-[-46%] max-lg:w-full max-lg:origin-bottom max-lg:scale-125"
             />
             <img
               src="/images/xcb-holder-logo.png"
@@ -152,12 +157,12 @@ export const ExploreSection = () => (
             </Button>
           </div>
         </RevealItem>
-        <RevealItem className="flex h-[620px] w-full items-end rounded-2xl border border-white/10 bg-[linear-gradient(135deg,#121212_0%,rgba(0,0,0,.85)_52.702702702702695%,rgba(0,0,0,.65)_100%)] backdrop-blur-lg max-lg:h-min">
+        <RevealItem className="flex h-[620px] max-h-min w-full items-end rounded-2xl border border-white/10 bg-[linear-gradient(135deg,#121212_0%,rgba(0,0,0,.85)_52.702702702702695%,rgba(0,0,0,.65)_100%)] backdrop-blur-lg max-lg:h-min">
           <SplineLoader
             scene="/models/real-infrastructure.splinecode"
             className="pointer-events-none absolute inset-0 flex justify-end [&>canvas]:!h-min [&>canvas]:!w-full"
           />
-          <div className="z-10 flex flex-col items-start p-16">
+          <div className="z-10 flex flex-col items-start p-16 max-lg:px-8 max-lg:py-14">
             <span className="block text-[13px] font-regular uppercase leading-none tracking-[0.33em] text-white/50">
               contribute to the ecosystem
             </span>
