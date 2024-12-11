@@ -1,0 +1,12 @@
+.depin-image {
+  animation: depinAnimation 5s infinite ease-in-out alternate;
+}
+
+@keyframes depinAnimation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(5px) translateY(20px);
+  }
+}

@@ -1,0 +1,16 @@
+---
+import MainLayout from "@src/layouts/MainLayout.astro";
+import {
+  IntroSection,
+  WhatIsSection,
+  SolutionsSection,
+} from "@src/sections/depin-and-rwa";
+---
+
+<MainLayout>
+  <div class="bg-black">
+    <IntroSection client:load />
+    <WhatIsSection client:load />
+    <SolutionsSection client:load />
+  </div>
+</MainLayout>
