@@ -97,7 +97,7 @@ const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
 
   return (
     <>
-      <div className="relative flex h-[402px] flex-1 rounded-2xl border border-white/[10%] backdrop-blur-lg max-lg:w-full max-lg:flex-none">
+      <div className="relative flex h-[402px] flex-1 overflow-hidden rounded-2xl border border-white/[10%] backdrop-blur-lg before:absolute  before:inset-0 before:bg-[linear-gradient(rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_100%)] before:opacity-0 before:transition-opacity before:duration-400 hover:shadow-[black_0px_24px_40px_0px] hover:before:opacity-100 max-lg:w-full max-lg:flex-none">
         <SplineLoader
           className="pointer-events-none absolute inset-0 max-lg:flex max-lg:justify-center"
           scene={`/models/${name}.splinecode`}
