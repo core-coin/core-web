@@ -1,0 +1,12 @@
+---
+import MainLayout from "@src/layouts/MainLayout.astro";
+import {
+  IntroSection,
+} from "@src/sections/get-started";
+---
+
+<MainLayout>
+  <div class="bg-black">
+    <IntroSection client:load />
+  </div>
+</MainLayout>
