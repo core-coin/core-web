@@ -29,7 +29,7 @@ export function DesktopHeader() {
   return (
     <AnimatePresence mode="wait">
       <motion.header
-        className="fixed inset-x-0 z-40 flex justify-center bg-black/75 backdrop-blur-lg"
+        className="fixed inset-x-0 top-0 z-40 flex justify-center bg-black/75 backdrop-blur-lg"
         initial={
           isScrolled.current
             ? { opacity: 1, translateY: -100 }
@@ -49,7 +49,7 @@ export function DesktopHeader() {
             : { type: "spring", stiffness: 30 }
         }
       >
-        <div className="relative flex h-24 w-full max-w-[1400px] flex-row flex-nowrap items-center gap-2.5 border-b border-white/15 px-6">
+        <div className="relative flex h-24 w-full max-w-screen-lg flex-row flex-nowrap items-center gap-2.5 border-b border-white/15 px-6">
           <div className="w-[260px]">
             <a href="/">
               <img

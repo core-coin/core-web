@@ -2,10 +2,29 @@
 import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
-
 import tailwind from "@astrojs/tailwind";
+import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind()],
+  integrations: [
+    starlight({
+      title: "Core Blockchain",
+      components: {
+        PageFrame: "./src/components/Docs/PageFrame.tsx",
+        Sidebar: "./src/components/Docs/Sidebar.tsx",
+        Header: "./src/components/Docs/CustomHeader.astro",
+      },
+      sidebar: [
+        {
+          label: "Getting Started",
+          autogenerate: {
+            directory: "docs",
+          },
+        },
+      ],
+    }),
+    react(),
+    tailwind(),
+  ],
 });
