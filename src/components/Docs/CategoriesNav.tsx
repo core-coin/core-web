@@ -45,9 +45,9 @@ export const CategoriesNav = () => {
           key={category.title}
           href={category.link}
           className={clsx(
-            "group flex flex-1 flex-row items-center justify-center gap-2.5 rounded px-6 py-3 transition-colors duration-300 hover:bg-white/10",
+            "flex flex-1 flex-row items-center justify-center gap-2.5 rounded px-6 py-3 transition-colors duration-300 hover:bg-white/10",
             {
-              "bg-white/10 border border-[#222] hover:bg-brand/20 hover:border-brand/[33%]":
+              "group bg-white/10 border border-[#222] hover:bg-brand/20 hover:border-brand/[33%]":
                 activeCategory === category.title,
             },
           )}
