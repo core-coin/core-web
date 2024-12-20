@@ -18,4 +18,5 @@ html, body {
 
 :root {
   --sl-color-bg: black;
+  --sl-nav-height: 96px;
 }

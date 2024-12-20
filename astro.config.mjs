@@ -12,6 +12,7 @@ export default defineConfig({
       title: "Core Blockchain",
       components: {
         PageFrame: "./src/components/Docs/PageFrame.tsx",
+        PageSidebar: "./src/components/Docs/PageSidebar.astro",
         Sidebar: "./src/components/Docs/Sidebar.tsx",
         Header: "./src/components/Docs/CustomHeader.astro",
       },

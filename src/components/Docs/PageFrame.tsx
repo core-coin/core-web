@@ -13,7 +13,7 @@ const PageFrame = (props: IPageFrameProps) => {
       {props.header}
       <div className="flex">
         {props.sidebar}
-        <article className="flex flex-1 [&>div]:flex-1">
+        <article className="flex flex-1 [&>div]:flex-1 [&_.right-sidebar]:border-s-0">
           {props.children}
         </article>
       </div>
