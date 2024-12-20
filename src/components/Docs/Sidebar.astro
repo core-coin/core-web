@@ -1,0 +1,7 @@
+---
+import { Sidebar as ReactSidebar } from "./Sidebar";
+const { labels, ...restProps } = Astro.props;
+
+---
+
+<ReactSidebar client:load {...restProps} />

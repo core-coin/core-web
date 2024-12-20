@@ -13,7 +13,7 @@ export default defineConfig({
       components: {
         PageFrame: "./src/components/Docs/PageFrame.tsx",
         PageSidebar: "./src/components/Docs/PageSidebar.astro",
-        Sidebar: "./src/components/Docs/Sidebar.tsx",
+        Sidebar: "./src/components/Docs/Sidebar.astro",
         Header: "./src/components/Docs/CustomHeader.astro",
       },
       sidebar: [
