@@ -16,7 +16,7 @@ type ButtonAsButton = {
 type CommonButtonProps = {
   children?: ReactNode;
   className?: string;
-  size?: "sm" | "lg";
+  size?: "xs" | "sm" | "lg";
   variant?: "primary" | "secondary" | "bordered";
   hasIcon?: boolean;
 };
@@ -33,6 +33,7 @@ export const Button = ({
   ...rest
 }: ButtonProps) => {
   const sizeClasses = {
+    xs: "px-8 py-3 text-xs h-12",
     sm: "px-12 py-3 text-xs h-12",
     lg: "px-[60px] py-4 text-sm h-16",
   };

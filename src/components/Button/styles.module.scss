@@ -17,7 +17,7 @@
     @apply border-[1px];
 
     &[data-variant="primary"] {
-      &[data-size="sm"] {
+      &[data-size="sm"], &[data-size="xs"] {
         @apply text-white border-white/20;
       }
 
@@ -28,7 +28,7 @@
       &::after {
         @apply top-full;
 
-        &[data-size="sm"] {
+        &[data-size="sm"], &[data-size="xs"] {
           @apply bg-white;
         }
 

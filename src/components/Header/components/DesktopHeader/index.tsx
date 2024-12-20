@@ -85,7 +85,7 @@ export function DesktopHeader() {
             </ul>
           </div>
           <div className="flex w-[260px] justify-end">
-            <Button as="a" href="/">
+            <Button as="a" href="/" size="xs">
               Get Started
             </Button>
           </div>
