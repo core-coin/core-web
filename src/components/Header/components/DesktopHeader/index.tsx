@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -8,12 +8,19 @@ import {
 import { Button } from "@src/components";
 import { MenuItem } from "..";
 import { MENU_ITEMS } from "../../header.constants";
+import clsx from "clsx";
 
 export function DesktopHeader() {
   const { scrollYProgress } = useScroll();
   const isScrolled = useRef<boolean>(false);
-
+  const [isDocumentationPages, setIsDocumentationPages] = useState(false);
   const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (window.location.href.includes("/docs")) {
+      setIsDocumentationPages(true);
+    }
+  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     const direction = current! - scrollYProgress.getPrevious()!;
@@ -49,7 +56,14 @@ export function DesktopHeader() {
             : { type: "spring", stiffness: 30 }
         }
       >
-        <div className="relative flex h-24 w-full max-w-screen-lg flex-row flex-nowrap items-center gap-2.5 border-b border-white/15 px-6">
+        <div
+          className={clsx(
+            "relative flex h-24 w-full max-w-screen-lg flex-row flex-nowrap items-center gap-2.5 border-b border-white/15 px-6",
+            {
+              "border-none": isDocumentationPages,
+            },
+          )}
+        >
           <div className="w-[260px]">
             <a href="/">
               <img
