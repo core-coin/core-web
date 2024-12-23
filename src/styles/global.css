@@ -15,8 +15,3 @@ body {
 html, body {
   overflow-x: clip;
 }
-
-:root {
-  --sl-color-bg: black;
-  --sl-nav-height: calc(96px + 66px);
-}

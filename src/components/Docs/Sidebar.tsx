@@ -14,7 +14,7 @@ export const Sidebar = ({ sidebar }: Props) => {
     isBrowser() && window.location.pathname?.split("/")[1];
 
   return (
-    <aside className="sticky top-10 flex w-[320px] flex-col gap-8 self-start p-12">
+    <aside className="sticky top-10 flex w-[320px] flex-col gap-8 self-start p-12 transition-all [body.has-category-nav_&]:top-36">
       {documentationBasePath && (
         <span className="text-xs font-regular uppercase leading-normal tracking-[0.25em] text-white/[66%]">
           {sidebarTitleMap[documentationBasePath]}
