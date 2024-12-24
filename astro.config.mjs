@@ -15,6 +15,7 @@ export default defineConfig({
         PageSidebar: "./src/components/Docs/PageSidebar.astro",
         Sidebar: "./src/components/Docs/Sidebar.astro",
         Header: "./src/components/Docs/CustomHeader.astro",
+        Pagination: "./src/components/Docs/Pagination.tsx",
       },
       sidebar: [
         {
