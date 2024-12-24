@@ -3,7 +3,9 @@ title: "Intro to Development"
 description: "Welcome to the Solana Quick Start Guide! This hands-on guide will introduce you to the core concepts for building on Solana, regardless of your prior experience. By the end of this tutorial, you'll have a basic foundation in Solana development and be ready to explore more advanced topics."
 ---
 
+<p class="text-white">
 Welcome to the Solana Quick Start Guide! This hands-on guide will introduce you to the core concepts for building on Solana, regardless of your prior experience. By the end of this tutorial, you'll have a basic foundation in Solana development and be ready to explore more advanced topics.
+</p>
 
 ## What You'll Learn
 

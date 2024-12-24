@@ -5,3 +5,19 @@ body {
 :root {
   --sl-color-bg: black;
 }
+
+.content-panel {
+  border-top: 0 !important;
+}
+
+.sl-container {
+  margin-inline: 0 !important;
+}
+
+.sl-markdown-content ul {
+  list-style: inside;
+}
+
+.sl-markdown-content p, .sl-markdown-content ul {
+  @apply text-white/[66%];
+}
