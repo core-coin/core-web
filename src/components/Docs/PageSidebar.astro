@@ -1,7 +1,6 @@
 ---
 import { PageSidebar as ReactPageSidebar } from "./PageSidebar";
 const { labels, ...restProps } = Astro.props;
-
 ---
 
-<ReactPageSidebar client:load {...restProps} />
+<ReactPageSidebar client:load {...Astro.props.sidebar} {...restProps} />
