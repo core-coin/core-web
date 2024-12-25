@@ -9,6 +9,7 @@ import { Button } from "@src/components";
 import { MenuItem } from "..";
 import { MENU_ITEMS } from "../../header.constants";
 import clsx from "clsx";
+import { MagnifyingGlass } from "@phosphor-icons/react";
 
 export function DesktopHeader() {
   const { scrollYProgress } = useScroll();
@@ -32,6 +33,15 @@ export function DesktopHeader() {
       setVisible(false);
     }
   });
+
+  const handleDocumentationSearchClick = () => {
+    const searchWrapper = document.querySelector(".search-wrapper>button");
+    if (searchWrapper) {
+      setTimeout(() => {
+        (searchWrapper as HTMLButtonElement).click();
+      }, 0);
+    }
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -84,7 +94,14 @@ export function DesktopHeader() {
               ))}
             </ul>
           </div>
-          <div className="flex w-[260px] justify-end">
+          <div className="flex w-[260px] justify-end gap-6">
+            {isDocumentationPages && (
+              <div className="flex items-center justify-center">
+                <button type="button" onClick={handleDocumentationSearchClick}>
+                  <MagnifyingGlass width={20} className="text-[#424242]" />
+                </button>
+              </div>
+            )}
             <Button as="a" href="/" size="xs">
               Get Started
             </Button>

@@ -1,7 +1,9 @@
 ---
 import { Header } from "@src/components";
+import Search from '@astrojs/starlight/components/Search.astro';
 import { CategoriesNav } from "./CategoriesNav";
 ---
 
 <Header client:load />
+<Search {...Astro.props.search} class="search-wrapper [&>button]:!hidden" />
 <CategoriesNav client:load />
