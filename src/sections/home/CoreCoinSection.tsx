@@ -1,8 +1,8 @@
 import {
+  AssetsVideoLoader,
   BlurTextReveal,
   Button,
   SectionTitle,
-  SplineLoader,
 } from "@src/components";
 
 export const CoreCoinSection = () => (
@@ -45,9 +45,9 @@ export const CoreCoinSection = () => (
         </div>
       </div>
       <div className="sticky top-[160px] flex h-[650px] flex-1 flex-col items-start gap-16 max-lg:relative max-lg:top-0">
-        <SplineLoader
+        <AssetsVideoLoader
           className="pointer-events-none max-lg:flex max-lg:justify-center max-lg:[&>canvas]:!h-min max-lg:[&>canvas]:!w-full"
-          scene="/models/coin.splinecode"
+          src="/videos/coin.mp4"
         />
       </div>
     </div>

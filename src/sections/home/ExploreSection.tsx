@@ -1,8 +1,8 @@
 import {
+  AssetsVideoLoader,
   BlurTextReveal,
   Button,
   SectionTitle,
-  SplineLoader,
 } from "@src/components";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { type ReactNode, useRef } from "react";
@@ -157,10 +157,10 @@ export const ExploreSection = () => (
             </Button>
           </div>
         </RevealItem>
-        <RevealItem className="flex h-[620px] max-h-min w-full items-end rounded-2xl border border-white/10 bg-[linear-gradient(135deg,#121212_0%,rgba(0,0,0,.85)_52.702702702702695%,rgba(0,0,0,.65)_100%)] backdrop-blur-lg max-lg:h-min">
-          <SplineLoader
-            scene="/models/real-infrastructure.splinecode"
-            className="pointer-events-none absolute inset-0 flex justify-end [&>canvas]:!h-min [&>canvas]:!w-full"
+        <RevealItem className="flex h-[620px] max-h-min w-full items-end overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(135deg,#121212_0%,rgba(0,0,0,.85)_52.702702702702695%,rgba(0,0,0,.65)_100%)] backdrop-blur-lg max-lg:h-min">
+          <AssetsVideoLoader
+            src="/videos/real-infrastructure.mp4"
+            className="pointer-events-none absolute inset-0 flex w-full justify-end [&>canvas]:!h-min [&>canvas]:!w-full"
           />
           <div className="z-10 flex flex-col items-start p-16 max-lg:px-8 max-lg:py-14">
             <span className="block text-[13px] font-regular uppercase leading-none tracking-[0.33em] text-white/50">

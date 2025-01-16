@@ -1,9 +1,9 @@
 import {
+  AssetsVideoLoader,
   BlurTextReveal,
   Button,
   type ModalRef,
   SectionTitle,
-  SplineLoader,
 } from "@src/components";
 import { useTransform, motion, type MotionValue } from "framer-motion";
 import { Plus } from "@phosphor-icons/react";
@@ -98,9 +98,9 @@ const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
   return (
     <>
       <div className="relative flex h-[402px] flex-1 overflow-hidden rounded-2xl border border-white/[10%] backdrop-blur-lg before:absolute  before:inset-0 before:bg-[linear-gradient(rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_100%)] before:opacity-0 before:transition-opacity before:duration-400 hover:shadow-[black_0px_24px_40px_0px] hover:before:opacity-100 max-lg:w-full max-lg:flex-none">
-        <SplineLoader
-          className="pointer-events-none absolute inset-0 max-lg:flex max-lg:justify-center"
-          scene={`/models/${name}.splinecode`}
+        <AssetsVideoLoader
+          className="pointer-events-none absolute inset-0 w-full max-lg:flex max-lg:justify-center"
+          src={`/videos/${name}.mp4`}
         />
         <div className="absolute inset-x-0 bottom-0 flex flex-row gap-10 p-8">
           <div className="flex flex-col gap-4 max-lg:flex-1">
@@ -135,9 +135,9 @@ const TrilemmaItem = ({ name, title, description }: ITrilemmaItemProps) => {
         <p className="text-sm font-thin leading-normal text-white/50">
           {modalContent.description}
         </p>
-        <SplineLoader
+        <AssetsVideoLoader
           className="pointer-events-none absolute inset-0 mx-auto !w-[90%] max-lg:flex max-lg:justify-center [&>canvas]:aspect-square [&>canvas]:!h-auto [&>canvas]:!w-full"
-          scene={`/models/${name}.splinecode`}
+          src={`/videos/${name}.mp4`}
         />
       </Modal>
     </>

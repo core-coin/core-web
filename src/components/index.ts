@@ -10,5 +10,6 @@ export * from "./SplineLoader";
 export * from "./FixedBottomGradient";
 export * from "./RenderOnViewport";
 export * from "./SpinnerLoading";
+export * from "./AssetsVideoLoader";
 
 export type { ModalRef } from "./Modal";
