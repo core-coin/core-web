@@ -49,10 +49,15 @@ export default {
             transform: "scale(2.2)",
           },
         },
+        rotation: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "scroll-x": "scroll-x 25s linear infinite",
         pulse: "pulse 3s linear infinite",
+        spin: "rotation 1s linear infinite",
       },
     },
   },
