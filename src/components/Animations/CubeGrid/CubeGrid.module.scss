@@ -1,0 +1,156 @@
+// Define size variable first
+$size: 60;
+
+:root {
+  --animate-cubegrid-size: 60px;
+  --animate-cubegrid-color-front: #e7Ac20;
+  --animate-cubegrid-color-left: #d53a33;
+  --animate-cubegrid-color-top: #1d9099;
+}
+
+* {
+  box-sizing: border-box;
+  transition: 0.35s ease;
+}
+
+.animate-cubegrid-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 88%;
+  width: var(--animate-cubegrid-size);
+  height: var(--animate-cubegrid-size);
+  perspective: 6000px;
+}
+
+.animate-cubegrid-cube {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(45deg);
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .animate-cubegrid-front {
+    transform: rotateY(0deg) translateZ(calc(var(--animate-cubegrid-size) / 2));
+    background-color: var(--animate-cubegrid-color-front);
+  }
+
+  .animate-cubegrid-left {
+    transform: rotateY(-90deg) translateZ(calc(var(--animate-cubegrid-size) / 2));
+    background-color: var(--animate-cubegrid-color-left);
+  }
+
+  .animate-cubegrid-top {
+    transform: rotateX(90deg) translateZ(calc(var(--animate-cubegrid-size) / 2));
+    background-color: var(--animate-cubegrid-color-top);
+  }
+
+  @for $i from 1 through 27 {
+    &:nth-child(#{$i}) {
+      animation: animate-cubegrid-#{$i} 3.5s cubic-bezier(0.75, 0, 0.2, 1) infinite;
+    }
+  }
+
+  // Base cube positions - matching original exactly
+  &.cube1  { transform: rotateX(-30deg) rotateY(45deg) translateX(($size - 1)px)  translateY(($size - 1)px)  translateZ(-($size - 1)px) }
+  &.cube2  { transform: rotateX(-30deg) rotateY(45deg) translateX(0)              translateY(($size - 1)px)  translateZ(-($size - 1)px) }
+  &.cube3  { transform: rotateX(-30deg) rotateY(45deg) translateX(($size - 1)px)  translateY(($size - 1)px)  translateZ(0) }
+  &.cube4  { transform: rotateX(-30deg) rotateY(45deg) translateX(-($size - 1)px) translateY(($size - 1)px)  translateZ(-($size - 1)px) }
+  &.cube5  { transform: rotateX(-30deg) rotateY(45deg) translateX(0)              translateY(($size - 1)px)  translateZ(0) }
+  &.cube6  { transform: rotateX(-30deg) rotateY(45deg) translateX(($size - 1)px)  translateY(($size - 1)px)  translateZ(($size - 1)px) }
+  &.cube7  { transform: rotateX(-30deg) rotateY(45deg) translateX(-($size - 1)px) translateY(($size - 1)px)  translateZ(0) }
+  &.cube8  { transform: rotateX(-30deg) rotateY(45deg) translateX(0)              translateY(($size - 1)px)  translateZ(($size - 1)px) }
+  &.cube9  { transform: rotateX(-30deg) rotateY(45deg) translateX(-($size - 1)px) translateY(($size - 1)px)  translateZ(($size - 1)px) }
+
+  // Middle layer (z = 1)
+  &.cube10 { transform: rotateX(-30deg) rotateY(45deg) translateX(0)            translateY(0)            translateZ(var(--animate-cubegrid-size)) }
+  &.cube11 { transform: rotateX(-30deg) rotateY(45deg) translateX(var(--animate-cubegrid-size))   translateY(0)            translateZ(var(--animate-cubegrid-size)) }
+  &.cube12 { transform: rotateX(-30deg) rotateY(45deg) translateX(calc(2 * var(--animate-cubegrid-size))) translateY(0) translateZ(var(--animate-cubegrid-size)) }
+  &.cube13 { transform: rotateX(-30deg) rotateY(45deg) translateX(0)            translateY(var(--animate-cubegrid-size))   translateZ(var(--animate-cubegrid-size)) }
+  &.cube14 { transform: rotateX(-30deg) rotateY(45deg) translateX(var(--animate-cubegrid-size))   translateY(var(--animate-cubegrid-size))   translateZ(var(--animate-cubegrid-size)) }
+  &.cube15 { transform: rotateX(-30deg) rotateY(45deg) translateX(calc(2 * var(--animate-cubegrid-size))) translateY(var(--animate-cubegrid-size)) translateZ(var(--animate-cubegrid-size)) }
+  &.cube16 { transform: rotateX(-30deg) rotateY(45deg) translateX(0)            translateY(calc(2 * var(--animate-cubegrid-size))) translateZ(var(--animate-cubegrid-size)) }
+  &.cube17 { transform: rotateX(-30deg) rotateY(45deg) translateX(var(--animate-cubegrid-size))   translateY(calc(2 * var(--animate-cubegrid-size))) translateZ(var(--animate-cubegrid-size)) }
+  &.cube18 { transform: rotateX(-30deg) rotateY(45deg) translateX(calc(2 * var(--animate-cubegrid-size))) translateY(calc(2 * var(--animate-cubegrid-size))) translateZ(var(--animate-cubegrid-size)) }
+
+  // Top layer (z = 2)
+  &.cube19 { transform: rotateX(-30deg) rotateY(45deg) translateX(0)            translateY(0)            translateZ(calc(2 * var(--animate-cubegrid-size))) }
+  &.cube20 { transform: rotateX(-30deg) rotateY(45deg) translateX(var(--animate-cubegrid-size))   translateY(0)            translateZ(calc(2 * var(--animate-cubegrid-size))) }
+  &.cube21 { transform: rotateX(-30deg) rotateY(45deg) translateX(calc(2 * var(--animate-cubegrid-size))) translateY(0) translateZ(calc(2 * var(--animate-cubegrid-size))) }
+  &.cube22 { transform: rotateX(-30deg) rotateY(45deg) translateX(0)            translateY(var(--animate-cubegrid-size))   translateZ(calc(2 * var(--animate-cubegrid-size))) }
+  &.cube23 { transform: rotateX(-30deg) rotateY(45deg) translateX(var(--animate-cubegrid-size))   translateY(var(--animate-cubegrid-size))   translateZ(calc(2 * var(--animate-cubegrid-size))) }
+  &.cube24 { transform: rotateX(-30deg) rotateY(45deg) translateX(calc(2 * var(--animate-cubegrid-size))) translateY(var(--animate-cubegrid-size)) translateZ(calc(2 * var(--animate-cubegrid-size))) }
+  &.cube25 { transform: rotateX(-30deg) rotateY(45deg) translateX(0)            translateY(calc(2 * var(--animate-cubegrid-size))) translateZ(calc(2 * var(--animate-cubegrid-size))) }
+  &.cube26 { transform: rotateX(-30deg) rotateY(45deg) translateX(var(--animate-cubegrid-size))   translateY(calc(2 * var(--animate-cubegrid-size))) translateZ(calc(2 * var(--animate-cubegrid-size))) }
+  &.cube27 { transform: rotateX(-30deg) rotateY(45deg) translateX(calc(2 * var(--animate-cubegrid-size))) translateY(calc(2 * var(--animate-cubegrid-size))) translateZ(calc(2 * var(--animate-cubegrid-size))) }
+}
+
+// Animation keyframes for each cube
+@for $i from 1 through 27 {
+  $x: ($i - 1) % 3 - 1;
+  $y: floor(($i - 1) / 9) - 1;
+  $z: floor(($i - 1) % 9 / 3) - 1;
+  
+  @keyframes animate-cubegrid-#{$i} {
+    0% {
+      transform: rotateX(-30deg) rotateY(45deg) 
+                translateX(calc(#{$x} * (var(--animate-cubegrid-size) - 1px)))
+                translateY(calc(#{$y} * (var(--animate-cubegrid-size) - 1px)))
+                translateZ(calc(#{$z} * (var(--animate-cubegrid-size) - 1px)));
+    }
+    16.666% {
+      transform: rotateX(-30deg) rotateY(45deg)
+                translateX(calc(#{$x} * (var(--animate-cubegrid-size) - 1px)))
+                translateY(calc(#{$y} * (var(--animate-cubegrid-size) - 1px)))
+                translateZ(calc(#{if($z < 0, -2, if($z > 0, 2, $z))} * var(--animate-cubegrid-size)));
+    }
+    33.333% {
+      transform: rotateX(-30deg) rotateY(45deg)
+                translateX(calc(#{if($x < 0, -2, if($x > 0, 2, $x))} * var(--animate-cubegrid-size)))
+                translateY(calc(#{$y} * (var(--animate-cubegrid-size) - 1px)))
+                translateZ(calc(#{if($z < 0, -2, if($z > 0, 2, $z))} * var(--animate-cubegrid-size)));
+    }
+    50% {
+      transform: rotateX(-30deg) rotateY(45deg)
+                translateX(calc(#{if($x < 0, -2, if($x > 0, 2, $x))} * var(--animate-cubegrid-size)))
+                translateY(calc(#{if($y < 0, -1.675, if($y > 0, 1.675, $y))} * var(--animate-cubegrid-size)))
+                translateZ(calc(#{if($z < 0, -2, if($z > 0, 2, $z))} * var(--animate-cubegrid-size)));
+    }
+    66.666% {
+      transform: rotateX(-30deg) rotateY(45deg)
+                translateX(calc(#{if($x < 0, -2, if($x > 0, 2, $x))} * var(--animate-cubegrid-size)))
+                translateY(calc(#{if($y < 0, -1.675, if($y > 0, 1.675, $y))} * var(--animate-cubegrid-size)))
+                translateZ(calc(#{$z} * (var(--animate-cubegrid-size) - 1px)));
+    }
+    83.333% {
+      transform: rotateX(-30deg) rotateY(45deg)
+                translateX(calc(#{$x} * (var(--animate-cubegrid-size) - 1px)))
+                translateY(calc(#{if($y < 0, -1.675, if($y > 0, 1.675, $y))} * var(--animate-cubegrid-size)))
+                translateZ(calc(#{$z} * (var(--animate-cubegrid-size) - 1px)));
+    }
+    100% {
+      transform: rotateX(-30deg) rotateY(45deg)
+                translateX(calc(#{$x} * (var(--animate-cubegrid-size) - 1px)))
+                translateY(calc(#{$y} * (var(--animate-cubegrid-size) - 1px)))
+                translateZ(calc(#{$z} * (var(--animate-cubegrid-size) - 1px)));
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .animate-cubegrid-container {
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+}
+
+:global(body) {
+  background-color: #262626;
+}

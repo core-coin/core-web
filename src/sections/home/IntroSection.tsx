@@ -1,13 +1,11 @@
-import { AssetsVideoLoader, Button, SectionTitle } from "@src/components";
+import { Button, SectionTitle } from "@src/components";
+import { CubeMatrix } from "@src/components/Animations";
 import clsx from "clsx";
 
 export const IntroSection = () => {
   return (
     <section className="flex h-screen w-screen items-center justify-center">
-      <AssetsVideoLoader
-        src="/videos/home-intro.mp4"
-        className="pointer-events-none absolute inset-0 h-full object-cover opacity-80"
-      />
+      <CubeMatrix />
       <div className="z-10 flex w-full max-w-screen-lg flex-col items-center justify-center gap-6 max-lg:p-8">
         <SectionTitle title="core blockchain" variant="secondary" />
         <h3

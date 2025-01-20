@@ -1,0 +1,138 @@
+$grid-size: 5; // sqrt of number of cubes
+$cube-size: 4em; // cube edge length
+$faces: 6; // number of cube faces
+$edges: 4; // number of square edges
+$color: #ddd;
+$brightness-percent: 10%;
+$gap: 0.25 * $cube-size;
+$middle: 0.5 * ($grid-size - 1);
+$distance: $cube-size + $gap;
+$animation-distance: 3 * $distance;
+$edge-angle: 360deg/$edges;
+$duration: 2.8s;
+$breakpoint: 50%/$grid-size;
+
+@mixin background($color, $angle, $percent) {
+  background: darken($color, (1 - cos($angle)) * $percent);
+}
+
+@for $i from 0 through $grid-size {
+  .animate-backrollcubes-cube:nth-child(n) {
+    &[data-movement="#{$i}"] {
+      animation-name: animate-backrollcubes-movement-#{$i};
+      
+      div:before {
+        animation-name: animate-backrollcubes-fade-#{$i};
+      }
+    }
+  }
+  
+  @keyframes animate-backrollcubes-movement-#{$i} {
+    #{$i * $breakpoint} {
+      transform: none;
+    }
+    #{($i + 2) * $breakpoint}, 100% {
+      transform: translateZ(-$animation-distance) rotateX($edge-angle);
+    }
+  }
+  
+  @keyframes animate-backrollcubes-fade-#{$i} {
+    #{$i * $breakpoint} {
+      opacity: 0.999;
+    }
+    #{($i + 2) * $breakpoint}, 100% {
+      opacity: 0.001;
+    }
+  }
+}
+
+.animate-backrollcubes-assembly {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  animation: animate-backrollcubes-assembly $duration linear infinite;
+}
+
+@keyframes animate-backrollcubes-assembly {
+  to {
+    transform: translateZ($animation-distance);
+  }
+}
+
+.animate-backrollcubes-cube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  animation: animate-backrollcubes-phase $duration cubic-bezier(0.65, 0.05, 0.35, 1) infinite;
+
+  @for $i from 0 to $grid-size {
+    $y: ($i - $middle) * $distance;
+    $q1: abs($i - $middle);
+    
+    @for $j from 0 to $grid-size {
+      $x: ($j - $middle) * $distance;
+      $idx: $i * $grid-size + $j + 1;
+      $q2: abs($j - $middle);
+      $s: $q1 + $q2 + max(0, max($q1, $q2) - 1);
+      
+      &:nth-child(#{$idx}) {
+        margin: $y $x;
+        animation-name: animate-backrollcubes-movement-#{$s};
+        
+        div:before {
+          animation-name: animate-backrollcubes-fade-#{$s};
+        }
+      }
+    }
+  }
+}
+
+.animate-backrollcubes-cube__face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.5 * $cube-size;
+  width: $cube-size;
+  height: $cube-size;
+  backface-visibility: hidden;
+  
+  &:nth-child(-n + 4):before {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    animation: animate-backrollcubes-phase $duration ease-in-out infinite;
+    content: '';
+  }
+  
+  &:nth-child(n + 5) {
+    background: darken($color, 3 * $brightness-percent);
+  }
+  
+  @for $i from 0 to $faces {
+    $angle: $i * $edge-angle;
+    $prev-angle: ($i - 1) * $edge-angle;
+    
+    &:nth-child(#{$i + 1}) {
+      transform: if($i < $edges,
+        rotateX($angle),
+        rotateY(pow(-1, $i) * $edge-angle)
+      ) translateZ(0.5 * $cube-size);
+      
+      @if $i < $edges {
+        @include background($color, $angle, $brightness-percent);
+        
+        &:before {
+          @include background($color, $prev-angle, $brightness-percent);
+        }
+      }
+    }
+  }
+}
+
+@keyframes animate-backrollcubes-phase {
+  from, to {
+    transform: none;
+  }
+} 

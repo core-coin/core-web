@@ -22,3 +22,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# astro setting folder
+.astro/
+
+# Lock file
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
