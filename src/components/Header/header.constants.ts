@@ -12,7 +12,7 @@ export const MENU_ITEMS: IMenuItemProps[] = [
           backgroundImage: "/images/ecosystem-bg.png",
           title: "Ecosystem",
           description: "Interconnected network driving project growth",
-          link: "",
+          link: "/ecosystem",
         },
         {
           type: "secondary",
@@ -20,14 +20,14 @@ export const MENU_ITEMS: IMenuItemProps[] = [
           title: "DePIN & RWA Solutions",
           description:
             "Integrate real-world assets into Core's blockchain ecosystem.",
-          link: "",
+          link: "/depin-and-rwa",
         },
         {
           type: "secondary",
           icon: "/images/about.png",
           title: "More about CORE Blockchain",
           description: "Explore the heart of Core Blockchain's infrastructure.",
-          link: "",
+          link: "/more-about-core",
         },
         {
           type: "secondary",
@@ -35,7 +35,7 @@ export const MENU_ITEMS: IMenuItemProps[] = [
           title: "10 Minute Primer",
           description:
             "Learn the essentials of Core Blockchain in 10 minutes or less.",
-          link: "",
+          link: "/primer",
         },
       ],
     },
@@ -52,7 +52,7 @@ export const MENU_ITEMS: IMenuItemProps[] = [
           backgroundImage: "/images/get-started-bg.png",
           title: "Get Started",
           description: "Interconnected network driving project growth",
-          link: "",
+          link: "/get-started",
         },
         {
           type: "secondary",
@@ -60,7 +60,7 @@ export const MENU_ITEMS: IMenuItemProps[] = [
           title: "Dev HUB",
           description:
             "Explore all necessary documentation for Core Blockchain development.",
-          link: "",
+          link: "/dev-hub",
         },
         {
           type: "secondary",
@@ -68,7 +68,7 @@ export const MENU_ITEMS: IMenuItemProps[] = [
           title: "Dev Toolkit",
           description:
             "Equip yourself with the essential tools you'll need to build on the Core Blockchain.",
-          link: "",
+          link: "/dev-hub",
         },
         {
           type: "secondary",
@@ -76,7 +76,7 @@ export const MENU_ITEMS: IMenuItemProps[] = [
           title: "Create Your Token",
           description:
             "Convert real-world assets into tokens or create fully digital tokens on the Core Blockchain.",
-          link: "",
+          link: "/create-your-token",
         },
         {
           type: "secondary",
