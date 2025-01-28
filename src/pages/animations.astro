@@ -1,0 +1,147 @@
+---
+import MainLayout from "@src/layouts/MainLayout.astro";
+import { CubeDots, CubeOrbit, CubeGradient, CubeAssembly, CubeMatrix, CubeStretch, CubeFrame, CubeSlide, CubeExpand, CubeGrid, BackrollCubes, CubeShift, PenroseTriangle, SwitchingCubes, TunnelBall, TricklingCubes } from '@src/components/Animations';
+---
+
+<MainLayout>
+  <main class="min-h-screen w-full bg-black/90">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-white py-8 text-center">Animation Showcase</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Dots</h2>
+          <div class="animation-container">
+            <CubeDots client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Orbit</h2>
+          <div class="animation-container">
+            <CubeOrbit client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Gradient</h2>
+          <div class="animation-container">
+            <CubeGradient client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Assembly</h2>
+          <div class="animation-container">
+            <CubeAssembly client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Matrix</h2>
+          <div class="animation-container">
+            <CubeMatrix client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Stretch</h2>
+          <div class="animation-container">
+            <CubeStretch client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Frame</h2>
+          <div class="animation-container">
+            <CubeFrame client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Slide</h2>
+          <div class="animation-container">
+            <CubeSlide client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Expand</h2>
+          <div class="animation-container">
+            <CubeExpand client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Grid</h2>
+          <div class="animation-container">
+            <CubeGrid client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Backroll Cubes</h2>
+          <div class="animation-container">
+            <BackrollCubes client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Cube Shift</h2>
+          <div class="animation-container">
+            <CubeShift client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Penrose Triangle</h2>
+          <div class="animation-container">
+            <PenroseTriangle client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Tunnel Ball</h2>
+          <div class="animation-container">
+            <TunnelBall client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Switching Cubes</h2>
+          <div class="animation-container">
+            <SwitchingCubes client:load />
+          </div>
+        </div>
+
+        <div class="animation-card">
+          <h2 class="animation-title">Trickling Cubes</h2>
+          <div class="animation-container">
+            <TricklingCubes client:load />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</MainLayout>
+
+<style>
+  .animation-card {
+    @apply bg-white/5 rounded-lg overflow-hidden backdrop-blur-sm;
+    @apply border border-white/10;
+    @apply transition-all duration-300 hover:border-white/20;
+  }
+
+  .animation-title {
+    @apply text-2xl text-white p-4 text-center;
+    @apply border-b border-white/10;
+  }
+
+  .animation-container {
+    @apply aspect-square w-full;
+    @apply flex items-center justify-center;
+    @apply relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+</style>

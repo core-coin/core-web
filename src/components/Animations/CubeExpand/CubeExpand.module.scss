@@ -1,0 +1,140 @@
+:root {
+  --animate-cubeexpand-size: 2em;
+  --animate-cubeexpand-multiplier: 5;
+  --animate-cubeexpand-duration: 0.5s;
+  --animate-cubeexpand-color1: #ffffff;
+  --animate-cubeexpand-color2: #ff3366;
+  --animate-cubeexpand-color3: #ffcc33;
+  --animate-cubeexpand-color4: #ccff33;
+}
+
+.animate-cubeexpand-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: rotateX(-35deg) rotateY(-45deg);
+}
+
+.animate-cubeexpand-group {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  
+  $rotation-chain: ();
+  $reverse-chain: ();
+  
+  @for $i from 0 through 5 {
+    $j: $i % 2;
+    
+    &:nth-child(#{$i + 1}) {
+      @if $i > 0 {
+        $rotation: rotate3d(0, #{1 - $j}, $j, #{pow(-1, $j + 1) * 90}deg);
+        $rotation-chain: $rotation-chain $rotation;
+        $reverse-chain: rotate3d(0, #{1 - $j}, $j, #{pow(-1, $j) * 90}deg) $reverse-chain;
+      }
+      
+      z-index: $j;
+      transform: $rotation-chain translate3d(
+        0,
+        calc(-0.5 * (var(--animate-cubeexpand-multiplier) + 1) * var(--animate-cubeexpand-size)),
+        calc(-0.5 * (var(--animate-cubeexpand-multiplier) + 1) * var(--animate-cubeexpand-size))
+      );
+      
+      > .animate-cubeexpand-scale3d {
+        transform: translateX(calc(-0.5 * (var(--animate-cubeexpand-multiplier) + 1) * var(--animate-cubeexpand-size)));
+        
+        .animate-cubeexpand-face {
+          box-shadow: 0 0 1px currentColor;
+        }
+      }
+    }
+  }
+  
+  &:nth-child(3n + 1) .animate-cubeexpand-expand { color: var(--animate-cubeexpand-color2); }
+  &:nth-child(3n + 2) .animate-cubeexpand-expand { color: var(--animate-cubeexpand-color3); }
+  &:nth-child(3n + 3) .animate-cubeexpand-expand { color: var(--animate-cubeexpand-color4); }
+}
+
+.animate-cubeexpand-expand {
+  transform: scaleX(var(--animate-cubeexpand-multiplier));
+  transform-style: preserve-3d;
+}
+
+.animate-cubeexpand-scale3d {
+  position: absolute;
+  transform-style: preserve-3d;
+  
+  .animate-cubeexpand-expand & {
+    transform-origin: calc(var(--animate-cubeexpand-size) * -0.5);
+    animation: 
+      animate-cubeexpand-scale var(--animate-cubeexpand-duration) ease-in-out infinite alternate,
+      animate-cubeexpand-origin calc(var(--animate-cubeexpand-duration) * 2) steps(1) infinite;
+  }
+  
+  .animate-cubeexpand-group:nth-child(2n) .animate-cubeexpand-expand & {
+    animation-delay: calc(var(--animate-cubeexpand-duration) * -1);
+  }
+}
+
+.animate-cubeexpand-reverse {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.animate-cubeexpand-face {
+  position: absolute;
+  margin: calc(var(--animate-cubeexpand-size) * -0.5);
+  width: var(--animate-cubeexpand-size);
+  height: var(--animate-cubeexpand-size);
+  background: currentColor;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  
+  // All six faces of the cube
+  &:nth-child(1) {
+    transform: translateZ(calc(var(--animate-cubeexpand-size) * 0.5));
+    filter: brightness(1);
+  }
+  &:nth-child(2) {
+    transform: rotateY(180deg) translateZ(calc(var(--animate-cubeexpand-size) * 0.5));
+    filter: brightness(0.8);
+  }
+  &:nth-child(3) {
+    transform: rotateY(90deg) translateZ(calc(var(--animate-cubeexpand-size) * 0.5));
+    filter: brightness(0.9);
+  }
+  &:nth-child(4) {
+    transform: rotateY(-90deg) translateZ(calc(var(--animate-cubeexpand-size) * 0.5));
+    filter: brightness(0.7);
+  }
+  &:nth-child(5) {
+    transform: rotateX(90deg) translateZ(calc(var(--animate-cubeexpand-size) * 0.5));
+    filter: brightness(0.95);
+  }
+  &:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(calc(var(--animate-cubeexpand-size) * 0.5));
+    filter: brightness(0.85);
+  }
+}
+
+@keyframes animate-cubeexpand-scale {
+  0% {
+    transform: scale3d(0, 1, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes animate-cubeexpand-origin {
+  50% {
+    transform-origin: calc(var(--animate-cubeexpand-size) * 0.5);
+  }
+}
+
+:global(body) {
+  background: #000;
+  overflow: hidden;
+}

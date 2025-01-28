@@ -1,0 +1,63 @@
+$size: 50px;
+$cubeTop: #F6FDF8;
+$cubeLeft: #6C7340;
+$cubeRight: #72A298;
+$defaultSpacing: 30px; // Default gap between cubes
+$expandedSpacing: 60px; // Expanded spacing for animation
+
+.animate-cubematrix-container {
+  position: relative;
+  width: ($size * 3) + ($defaultSpacing * 2);
+  height: ($size * 3) + ($defaultSpacing * 2);
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateZ(45deg);
+}
+
+.animate-cubematrix-cube,
+.animate-cubematrix-cube:before,
+.animate-cubematrix-cube:after {
+  width: $size;
+  height: $size;
+  position: absolute;
+}
+
+.animate-cubematrix-cube {
+  background-color: $cubeTop;
+  transform-style: preserve-3d;
+  
+  &:before {
+    content: "";
+    background-color: $cubeLeft;
+    transform-origin: 100% 100%;
+    transform: rotateX(-90deg) translateY($size);
+  }
+  
+  &:after {
+    content: "";
+    transform-origin: 100% 0;
+    background-color: $cubeRight;
+    transform: rotateY(90deg) translateX($size);
+  }
+}
+
+@for $i from 0 through 2 {
+  @for $j from 0 through 2 {
+    $index: $i * 3 + $j + 1;
+    .animate-cubematrix-cube:nth-child(#{$index}) {
+      // Default position includes spacing
+      $baseX: ($size + $defaultSpacing) * (2 - $j);
+      $baseY: ($size + $defaultSpacing) * (2 - $i);
+      
+      animation: splitCube#{$index} 4s ease-in-out infinite;
+      
+      @keyframes splitCube#{$index} {
+        0%, 100% {
+          transform: translateX($baseX) translateY($baseY);
+        }
+        50% {
+          transform: translateX($size * (2 - $j)) translateY($size * (2 - $i));
+        }
+      }
+    }
+  }
+}

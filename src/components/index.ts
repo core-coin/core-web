@@ -11,5 +11,6 @@ export * from "./FixedBottomGradient";
 export * from "./RenderOnViewport";
 export * from "./SpinnerLoading";
 export * from "./AssetsVideoLoader";
+export * from "./Animations";
 
 export type { ModalRef } from "./Modal";

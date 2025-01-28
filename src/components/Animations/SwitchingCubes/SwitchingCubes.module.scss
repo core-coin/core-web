@@ -1,0 +1,102 @@
+:root {
+  --animate-switchingcubes-size: 8em;
+  --animate-switchingcubes-border: 0.125em;
+  --animate-switchingcubes-inset: 1.75em;
+}
+
+.animate-switchingcubes-assembly {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: rotateX(-45deg) rotateY(-135deg);
+
+  &, * {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+  }
+}
+
+.animate-switchingcubes-positioner {
+  @for $i from 0 through 5 {
+    $j: $i % 3;
+    $k: floor($i / 3);
+    
+    &:nth-child(#{$i + 1}) {
+      transform: 
+        if($j != 2, 
+          rotateY(($i + 1 - $k) * 90deg), 
+          rotateX(pow(-1, $i + 1) * 90deg)
+        )
+        translateZ(var(--animate-switchingcubes-size))
+        if($j == 0, (), rotate(($i - $k) * 90deg));
+    }
+  }
+  
+  &:last-child {
+    transform: scale3d(0.99, 0.99, 0.99);
+    -webkit-transform: none;
+  }
+}
+
+.animate-switchingcubes-cube {
+  .animate-switchingcubes-positioner:not(:last-child) & {
+    transform-origin: calc(var(--animate-switchingcubes-size) / 2) 0 calc(var(--animate-switchingcubes-size) * -0.5);
+    animation: animate-switchingcubes-rotate 1s ease-in-out infinite;
+  }
+}
+
+.animate-switchingcubes-face {
+  margin: calc(var(--animate-switchingcubes-size) * -0.5);
+  border: solid var(--animate-switchingcubes-border);
+  width: var(--animate-switchingcubes-size);
+  height: var(--animate-switchingcubes-size);
+  box-shadow: 
+    inset 0 0 0 var(--animate-switchingcubes-inset) grey,
+    inset 0 0 0 calc(2 * var(--animate-switchingcubes-border) + var(--animate-switchingcubes-inset));
+  
+  @for $i from 0 through 5 {
+    &:nth-child(#{$i + 1}) {
+      transform: if($i < 4, 
+        rotateY($i * 90deg), 
+        rotateX(pow(-1, $i) * 90deg)
+      ) translateZ(calc(var(--animate-switchingcubes-size) * 0.5));
+    }
+  }
+}
+
+.animate-switchingcubes-inner {
+  --inner-width: calc(var(--animate-switchingcubes-size) - 2 * (2 * var(--animate-switchingcubes-border) + var(--animate-switchingcubes-inset)));
+  --inner-height: calc(2 * var(--animate-switchingcubes-border) + var(--animate-switchingcubes-inset));
+  
+  margin: calc(var(--inner-height) * -0.5) calc(var(--inner-width) * -0.5);
+  border: solid var(--animate-switchingcubes-border);
+  width: var(--inner-width);
+  height: var(--inner-height);
+  backface-visibility: hidden;
+  background: silver;
+  
+  @for $i from 0 through 3 {
+    &:nth-child(#{$i + 1}) {
+      transform: rotate($i * 90deg) rotateX(-90deg) translate3d(
+        0,
+        calc(var(--inner-height) * 0.5),
+        calc(var(--inner-height) * -1)
+      );
+    }
+  }
+}
+
+@keyframes animate-switchingcubes-rotate {
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+:global(body) {
+  background: black;
+  overflow: hidden;
+} 
